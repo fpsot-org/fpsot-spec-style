@@ -1,0 +1,57 @@
+= Actions destructrices
+include::_fpsot-terms.adoc[]
+
+Ces règles portent sur les actions qui suppriment des données ou mettent fin à quelque chose.
+Par exemple, supprimer un dossier ou fermer un compte.
+Elles évitent qu’une personne perde son travail par erreur.
+
+== D’abord l’annulation
+
+[[STY-040]]
+*STY-040.* Quand un produit peut défaire une action, il DEVRAIT agir tout de suite et offrir une annulation.
+Il NE DEVRAIT PAS demander d’abord une confirmation.
+L’annulation DOIT rester offerte au moins aussi longtemps que le message qui la propose.
+Une question avant chaque action habitue les gens à confirmer sans lire.
+Une annulation ne coûte rien quand l’action était la bonne.
+
+== Confirmation
+
+[[STY-041]]
+*STY-041.* Une action irréversible DOIT d’abord demander une confirmation à la personne, dans une boîte de dialogue.
+La boîte de dialogue DOIT nommer l’objet et le résultat, comme « Supprimer le bien 4521? Vous perdrez son historique. »
+Le bouton de confirmation DOIT reprendre le verbe de l’action, comme « Supprimer le bien ».
+Il NE DOIT PAS indiquer « OK » ou « Oui ».
+Un libellé précis dit ce qui va se passer, sans lecture du reste de la boîte de dialogue.
+
+[[STY-042]]
+*STY-042.* Le bouton de confirmation d’une action destructrice DOIT employer les jetons de danger.
+À l’ouverture de la boîte de dialogue, le focus DOIT aller sur l’action la moins destructrice, comme « Annuler ».
+La touche Échap et le bouton d’annulation DOIVENT fermer la boîte de dialogue sans agir.
+Cette règle suit le modèle de boîte de dialogue de l’link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Authoring Practices Guide] du {abbr-w3c-first}.
+Une personne qui appuie sur Entrée par habitude annule alors au lieu de supprimer.
+
+[[STY-043]]
+*STY-043.* Pour une action grave, une boîte de dialogue PEUT demander à la personne de taper le nom de l’objet.
+Les résultats graves comprennent la perte d’un compte entier ou de nombreux dossiers.
+Le bouton de confirmation DOIT alors rester désactivé jusqu’à ce que le nom tapé corresponde.
+La boîte de dialogue DOIT dire quoi taper, comme STY-024 le demande pour toute commande désactivée.
+Un nom à taper oblige la personne à s’arrêter et à lire.
+Il ralentit aussi chaque usage, donc un produit le réserve aux actions rares et graves.
+
+[[STY-044]]
+*STY-044.* Une action destructrice DOIT partir d’un bouton qui envoie un formulaire, jamais d’un simple lien.
+Un navigateur, un robot de recherche ou un outil d’aperçu peut suivre un lien sans que personne le demande.
+
+== Références
+
+=== Références informatives
+
+* link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[ARIA Authoring Practices Guide, Dialog (Modal) Pattern], W3C, Web Accessibility Initiative. link:https://web.archive.org/web/20261026080539/https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Copie archivée]
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===

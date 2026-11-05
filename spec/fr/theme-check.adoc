@@ -1,0 +1,83 @@
+= Vérification d’un thème
+include::_fpsot-terms.adoc[]
+
+Ces règles fixent la façon de vérifier un thème selon la spécification de la {abbr-fpsot-first} sur l’accessibilité.
+Cette spécification contient chaque valeur à vérifier, comme les rapports de contraste et la taille de l’indicateur de focus.
+Cette page dit seulement quoi vérifier et quand.
+
+== Chaque thème est vérifié
+
+[[STY-060]]
+*STY-060.* Chaque thème DOIT réussir les vérifications de cette page avant chaque version du thème.
+Les vérifications DOIVENT se refaire quand le thème ou le système de design qu’il suit change de version.
+Aucun thème ne réussit d’office, et le thème PatternFly par défaut ne fait pas exception.
+link:https://www.patternfly.org/accessibility/overview[PatternFly] annonce une cible de niveau AA des link:https://www.w3.org/TR/WCAG22/[WCAG 2.2] pour ses composants.
+Cette cible est un objectif du projet, et non une vérification d’un thème.
+Un thème fixe la plupart des couleurs et des tailles que testent les règles d’accessibilité.
+
+== Vérification des jetons
+
+[[STY-061]]
+*STY-061.* La vérification des jetons DOIT tester chaque paire que nomme STY-010, dans chaque jeu de couleurs du thème.
+Chaque paire DOIT respecter la règle de contraste de la spécification de la {abbr-fpsot} sur l’accessibilité pour son usage.
+Les usages comprennent le texte, le grand texte et les indicateurs de focus.
+La vérification DOIT aussi confirmer que le thème donne une valeur à chaque jeton du contrat.
+Un outil lit les fichiers de jetons et fait cette vérification sans navigateur.
+
+== Vérification des composants
+
+[[STY-062]]
+*STY-062.* La vérification des composants DOIT afficher chaque composant dans chaque état de STY-020.
+Elle DOIT le faire avec le thème et avec chacun de ses jeux de couleurs.
+Elle DOIT appliquer les tests automatisés et manuels des pages Web de la spécification de la {abbr-fpsot} sur l’accessibilité.
+Elle DOIT couvrir au moins ces sujets :
+
+* la visibilité du focus et la réduction du mouvement;
+* l’agrandissement du texte, la redistribution et l’espacement du texte;
+* les modes de couleurs forcées.
+
+Certains défauts n’apparaissent que lorsqu’un jeton rencontre un vrai composant.
+Par exemple, un élément parent peut cacher un anneau de focus.
+
+== Registre de vérification
+
+[[STY-063]]
+*STY-063.* Chaque thème DOIT publier un registre de vérification avec chaque version.
+Le registre DOIT donner la version du thème et celle du système de design qu’il suit.
+Il DOIT aussi donner la date de la vérification, et les outils avec leurs versions.
+Il DOIT énumérer chaque défaut trouvé, avec sa correction ou la raison pour laquelle il reste ouvert.
+Un organisme public peut alors juger un thème avant de le déployer.
+
+== Corriger un défaut
+
+[[STY-064]]
+*STY-064.* Un thème DOIT corriger un défaut en changeant des valeurs de jetons, jamais en changeant le comportement d’un composant.
+Un défaut qu’une valeur de jeton ne peut pas corriger, comme un état de focus absent, DOIT aller au moteur.
+Quand le défaut vient d’un système de design, il DOIT aussi remonter à ce système de design.
+Le thème par défaut PEUT remplacer une valeur de PatternFly qui échoue, jusqu’à ce que PatternFly la corrige.
+Il DOIT alors signaler le défaut en amont, et chaque substitution DOIT figurer dans le registre de vérification.
+La correction atteint alors chaque produit qui emploie la même source.
+
+== Vérifications propres à une collectivité publique
+
+[[STY-065]]
+*STY-065.* Chaque thème d’une collectivité publique DOIT respecter la base de la spécification de la {abbr-fpsot} sur l’accessibilité.
+Cette base comprend déjà les critères que le link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0] ajoute pour le Québec.
+Les deux thèmes visent alors une seule cible, et une seule vérification sert aux deux.
+Chaque thème d’une collectivité publique sert là où s’appliquent ses règles.
+
+== Références
+
+=== Références informatives
+
+* link:https://www.patternfly.org/accessibility/overview[PatternFly, Accessibility overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20261008072120/https://www.patternfly.org/accessibility/overview/[Copie archivée]
+* link:https://www.w3.org/TR/WCAG22/[Web Content Accessibility Guidelines (WCAG) 2.2], W3C, recommandation du W3C, 2024-12-12. link:https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/[Copie archivée]
+* link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Standard sur l'accessibilité des sites Web (SGQRI 008 3.0)], ministère de la Cybersécurité et du Numérique, 3.0, en vigueur depuis le 2024-04-29, 2026-06-08. link:https://web.archive.org/web/20261103004830/https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Copie archivée]
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===

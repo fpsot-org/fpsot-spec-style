@@ -1,15 +1,72 @@
-= Guide
-:page-type: explanation
+= Make and check a theme
+:page-type: how-to
 include::_fpsot-terms.adoc[]
 
-This page explains the specification for the people who adopt it.
-Each guide page has one type.
-It is a tutorial, a how-to guide, a reference or an explanation.
+This guide shows how to build a theme for a jurisdiction and check it before release.
+The example maps a few semantic tokens to the colors of a government design system.
+
+== Start from the token contract
+
+Copy the {abbr-fpsot-first} semantic tokens, as STY-006 asks.
+Give each one a value, and do not rename, remove or add a token.
+Write the file in the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], as STY-002 asks.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "text": {
+      "regular": {
+        "$value": { "colorSpace": "srgb", "components": [0.133, 0.212, 0.329], "hex": "#223654" },
+        "$extensions": { "org.fpsot.style": { "on": ["color.background.page"] } }
+      }
+    },
+    "background": {
+      "page": { "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#ffffff" } }
+    }
+  }
+}
+----
+
+List the backgrounds of each text, icon, border and focus token under `$extensions`, as STY-010 asks.
+The token check needs those pairs.
+
+== Keep the theme to its look
+
+Put only color, type and layout in the theme, as STY-050 sets.
+Leave out scripts, templates and any change to how a component behaves, as STY-051 sets.
+Leave out logos, signatures and wordmarks, as STY-052 sets.
+The body that deploys the product adds them in the header and footer.
+
+== Check the theme
+
+. Run the token check of STY-061 on every pair, in each color scheme.
+Compare each result with the contrast rules of the {abbr-fpsot} accessibility specification.
+
+. Show each component in each state of STY-020, and run the tests of STY-062.
+
+. Fix each failure by changing a token value, as STY-064 asks.
+Send a gap that a value cannot fix to the engine, and upstream when it comes from the design system.
+
+. Publish the check record of STY-063 with the release.
+
+== Record the differences
+
+A government design system can set a behavior that differs from a rule of the style specification.
+Do not put that behavior in the theme.
+The product records the difference, as STY-056 asks.
+
+== References
+
+=== Informative
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Archived copy]
 
 == Document history
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Change
-|0.1.0 |2026-11-03 |First version.
+|0.1.0 |2026-11-05 |First version.
 |===

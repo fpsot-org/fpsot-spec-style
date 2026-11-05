@@ -9,22 +9,34 @@ developmentStatus: concept
 softwareType: "standalone/other"
 description:
   en:
-    shortDescription: Template for FPSOT specification repositories.
+    shortDescription: Style rules for the screens of FPSOT products.
     longDescription: >
-      Starting point for an FPSOT specification repository. It holds the
-      layout, the Community Specification License files, and the CI that
-      checks requirement IDs, links, languages and prose.
+      Rules for design tokens in the Design Tokens Format Module 2025.10,
+      the states of interactive components, validation messages, loading
+      and empty states, the confirmation of destructive actions, and
+      themes. The FPSOT default theme is PatternFly; the Québec theme
+      follows the Système de design gouvernemental and the Canada theme
+      follows the GC Design System. Every theme is checked against the
+      FPSOT accessibility specification.
     features:
-      - Specification repository layout
+      - Design tokens in a standard format
+      - Component behavior that no theme can change
+      - PatternFly, Québec and Canada themes
   fr:
-    shortDescription: Gabarit des dépôts de spécification de FPSOT.
+    shortDescription: Règles de style des écrans des produits FPSOT.
     longDescription: >
-      Point de départ d'un dépôt de spécification de FPSOT. Il contient la
-      structure, les fichiers de la Community Specification License, et
-      l'intégration continue qui vérifie les identifiants, les liens, les
-      langues et la rédaction.
+      Règles sur les jetons de design au format Design Tokens Format
+      Module 2025.10, les états des composants interactifs, les messages
+      de validation, les états de chargement et les états vides, la
+      confirmation des actions destructrices, et les thèmes. Le thème par
+      défaut de la FPSOT est PatternFly; le thème du Québec suit le
+      Système de design gouvernemental et le thème du Canada suit le
+      Système de design GC. Chaque thème est vérifié selon la
+      spécification de la FPSOT sur l'accessibilité.
     features:
-      - Structure d'un dépôt de spécification
+      - Jetons de design dans un format normalisé
+      - Comportement des composants qu'aucun thème ne peut changer
+      - Thèmes PatternFly, du Québec et du Canada
 legal:
   license: Community-Spec-1.0
 maintenance:

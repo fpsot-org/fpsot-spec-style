@@ -1,0 +1,58 @@
+= Component states
+include::_fpsot-terms.adoc[]
+
+These rules set the states of interactive components, such as buttons, links and form fields.
+The states are behavior, so every theme keeps them as they are.
+A theme only gives the colors and shapes of each state.
+
+== The set of states
+
+[[STY-020]]
+*STY-020.* Each interactive component MUST define a default, hover, focus, pressed and disabled state.
+Where they apply, it MUST also define a selected state and an error state.
+Each state MUST take its look from semantic state tokens, such as `color.background.action.hover`.
+Two states MUST NOT look the same.
+On touch screens, a theme MAY give hover and pressed one look.
+The person then always knows what the component will do and what it did.
+
+== Focus
+
+[[STY-021]]
+*STY-021.* Each interactive component MUST show a focus indicator when it receives keyboard focus.
+The indicator MUST use the focus tokens, and other parts of a screen MUST NOT use them.
+The indicator MUST add to the hover look, not replace it, so both can show at once.
+The size and contrast of the indicator come from the {abbr-fpsot-first} accessibility specification.
+With one focus look on every screen, people who use a keyboard can find their place.
+
+== Hover
+
+[[STY-022]]
+*STY-022.* Hover MUST NOT be the only way to reveal content or an action.
+A hover state MUST NOT move other content or change the size of the component.
+Touch screens have no hover, and a shift in the layout can make the person click the wrong thing.
+
+== Pressed and selected
+
+[[STY-023]]
+*STY-023.* The pressed state MUST show while the person activates the component by pointer, touch or keyboard.
+The selected state MUST stay until the person changes the selection.
+It MUST show by more than a change of color, such as a check mark or a bar.
+A selected item and an item that only has focus then never look alike.
+
+== Disabled
+
+[[STY-024]]
+*STY-024.* A product SHOULD NOT disable a button to show that a form is not complete.
+It SHOULD keep the button active, and explain what is missing when the person uses it.
+The messages of STY-031 and STY-032 give that explanation.
+When a product does disable a control, it MUST show the reason near the control or in its hint text.
+A disabled control MUST use the disabled tokens and MUST look different from the default state.
+A disabled button does not tell the person what to do next, and keyboard focus skips it.
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

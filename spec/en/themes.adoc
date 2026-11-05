@@ -1,0 +1,86 @@
+= Themes
+include::_fpsot-terms.adoc[]
+
+A theme gives a product its look.
+These rules set what a theme may contain, and describe the three themes of {abbr-fpsot-first}.
+
+== What a theme contains
+
+[[STY-050]]
+*STY-050.* A theme MUST contain only color, type and layout.
+Color and type are the values of the color and type tokens, and the font files the theme bundles.
+Layout is the values of the spacing, radius, elevation and layout tokens, and where the page regions go.
+Motion tokens are not part of a theme.
+A theme MAY hold more than one color scheme, such as light, dark and high contrast.
+With a clear limit, anyone can check that a theme changes the look and nothing else.
+
+[[STY-051]]
+*STY-051.* A theme MUST NOT change behavior.
+It MUST NOT contain scripts or templates.
+It MUST NOT change the states, keyboard use or focus order of a component.
+It MUST NOT change validation, messages or confirmation steps.
+It MUST NOT hide, add or reorder the content of a component.
+People then get the same safe behavior everywhere, and the tests of the behavior hold for every theme.
+
+[[STY-052]]
+*STY-052.* A theme MUST NOT contain official marks, such as logos, wordmarks, signatures, flags or coats of arms.
+The engine MUST give the header and the footer a place for marks.
+The government body that deploys the product adds its own marks there.
+Each government restricts the use of its marks, and only the body knows which marks it may show.
+
+== The FPSOT default theme
+
+[[STY-053]]
+*STY-053.* The {abbr-fpsot} default theme MUST be link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly] 6 as published, with its own token values.
+It maps the {abbr-fpsot} semantic tokens to PatternFly semantic tokens.
+It changes no value, except the overrides that STY-064 allows.
+It MUST state the PatternFly version it maps.
+Version 0.1 of this specification maps link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0], released 2026-10-15.
+The default theme suits staff and administration screens, and public services SHOULD use the theme of their jurisdiction.
+
+== The Québec theme
+
+[[STY-054]]
+*STY-054.* The Québec theme MUST follow the link:https://design.quebec.ca/a-propos/systeme-design[Système de design gouvernemental] of Québec.
+It takes its color palettes, its fonts, its 8-pixel grid and its shadow levels.
+It MUST also follow the layout of the link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[header banner] of the Québec visual identity program.
+The body adds the government signature to that banner, as STY-052 sets.
+Strict use of the design system is mandatory for Québec ministries and agencies.
+
+== The Canada theme
+
+[[STY-055]]
+*STY-055.* The Canada theme MUST follow the link:https://design-system.canada.ca/en/[GC Design System] and the link:https://design.canada.ca/specifications.html[Canada.ca specifications].
+It takes the design tokens of the GC Design System, and the mandatory colors, typography and layouts of Canada.ca.
+It MUST follow the layout of the Canada.ca global header and footer.
+The institution adds the federal signature and wordmark, as STY-052 sets.
+The Canada.ca design is mandatory for the public sites of the federal institutions in its scope.
+
+== Government behavior rules
+
+[[STY-056]]
+*STY-056.* A government design system can also set behavior, such as when to validate a field.
+A theme MUST NOT carry that behavior, even when it follows that design system.
+A binding government rule can set a behavior that differs from a rule of this specification.
+The product MUST then record each such difference in its documentation.
+The comparison pages of this specification show the known differences.
+The product then states which rules it meets, and the theme stays a pure look.
+
+== References
+
+=== Normative
+
+* link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0 release], Red Hat, 6.7.0, 2026-10-15. link:https://github.com/patternfly/patternfly/tree/8b47b37029ce6636663771d8086f95f0828aec42/[Source, version 8b47b37]
+* link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly, Design tokens overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20260605232727/https://www.patternfly.org/foundations-and-styles/design-tokens/overview/[Archived copy]
+* link:https://design.quebec.ca/a-propos/systeme-design[À propos du Système de design gouvernemental], Gouvernement du Québec, 2026-10-13. link:https://web.archive.org/web/20261103004635/https://design.quebec.ca/a-propos/systeme-design[Archived copy]
+* link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Bandeau d'en-tête PIV], Système de design gouvernemental, Gouvernement du Québec, 2026-10-14. link:https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Archived copy]
+* link:https://design-system.canada.ca/en/[GC Design System], Canadian Digital Service, 2026-03-11. link:https://web.archive.org/web/20260515112154/https://design-system.canada.ca/en/[Archived copy]
+* link:https://design.canada.ca/specifications.html[Canada.ca specifications], Government of Canada, 2024-08-21. link:https://web.archive.org/web/20261103002113/https://design.canada.ca/specifications.html[Archived copy]
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

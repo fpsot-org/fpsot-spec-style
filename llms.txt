@@ -1,0 +1,24 @@
+# FPSOT style specification
+
+> How FPSOT products look: design tokens in the Design Tokens Format Module 2025.10, component states, errors, loading and empty states, destructive actions, and themes (PatternFly default, Québec, Canada) checked against the FPSOT accessibility specification.
+
+## Specification
+
+- [Overview](spec/en/index.adoc): scope, parts, conformance and references.
+- [Design tokens](spec/en/tokens.adoc): STY-001 to STY-007.
+- [Token categories](spec/en/categories.adoc): STY-010 to STY-016.
+- [Component states](spec/en/states.adoc): STY-020 to STY-024.
+- [Errors, loading and empty states](spec/en/feedback.adoc): STY-030 to STY-036.
+- [Destructive actions](spec/en/destructive.adoc): STY-040 to STY-044.
+- [Themes](spec/en/themes.adoc): STY-050 to STY-056.
+- [Checking a theme](spec/en/theme-check.adoc): STY-060 to STY-065.
+
+## Guide
+
+- [Make and check a theme](docs/modules/en/pages/index.adoc)
+
+## Optional
+
+- [Agent skill](skill/SKILL.md)
+- [Comparison data](jurisdictions/baseline.yaml)
+- [Français](spec/fr/index.adoc)

@@ -1,0 +1,83 @@
+= Checking a theme
+include::_fpsot-terms.adoc[]
+
+These rules set how to check a theme against the {abbr-fpsot-first} accessibility specification.
+That specification holds every value to check, such as contrast ratios and the size of the focus indicator.
+This page only says what to check and when.
+
+== Every theme is checked
+
+[[STY-060]]
+*STY-060.* Every theme MUST pass the checks of this page before each release of the theme.
+The checks MUST run again when the theme or the design system it follows changes version.
+No theme passes by default, and the PatternFly default theme is no exception.
+link:https://www.patternfly.org/accessibility/overview[PatternFly] states a target of link:https://www.w3.org/TR/WCAG22/[WCAG 2.2] level AA for its components.
+That target is a goal of the project, not a check of a theme.
+A theme sets most of the colors and sizes that the accessibility rules test.
+
+== Token check
+
+[[STY-061]]
+*STY-061.* The token check MUST test every pair that STY-010 lists, in every color scheme of the theme.
+Each pair MUST meet the contrast rule of the {abbr-fpsot} accessibility specification for its use.
+Uses include text, large text and focus indicators.
+The check MUST also confirm that the theme gives a value to every token of the contract.
+A tool reads the token files and runs this check without a browser.
+
+== Component check
+
+[[STY-062]]
+*STY-062.* The component check MUST show each component in each state of STY-020.
+It MUST do so with the theme and with each of its color schemes.
+It MUST apply the automated and manual tests that the {abbr-fpsot} accessibility specification sets for web pages.
+At least, it MUST cover these topics:
+
+* focus visibility and reduced motion;
+* text resize, reflow and text spacing;
+* forced color modes.
+
+Some failures only show when a token meets a real component.
+An example is a focus ring that a parent element hides.
+
+== Check record
+
+[[STY-063]]
+*STY-063.* Each theme MUST publish a check record with each release.
+The record MUST give the version of the theme and the version of the design system it follows.
+It MUST also give the date of the check, and the tools with their versions.
+It MUST list each failure found and how the theme fixed it, or why it remains open.
+A government body can then judge a theme before it deploys it.
+
+== Fixing a gap
+
+[[STY-064]]
+*STY-064.* A theme MUST fix a gap by changing token values, never by changing the behavior of a component.
+A gap that a token value cannot fix, such as a missing focus state, MUST go to the engine.
+When the gap comes from a design system, it MUST also go upstream to that design system.
+The default theme MAY override a PatternFly value that fails, until PatternFly fixes it.
+It MUST then report the gap upstream, and each override MUST appear in the check record.
+The fix then reaches every product that uses the same source.
+
+== Jurisdiction checks
+
+[[STY-065]]
+*STY-065.* Each jurisdiction theme MUST meet the baseline of the {abbr-fpsot} accessibility specification.
+That baseline already includes the criteria that link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0] adds for Québec.
+The two themes then meet one target, and a single check serves both.
+Each jurisdiction theme serves where the rules of that jurisdiction apply.
+
+== References
+
+=== Informative
+
+* link:https://www.patternfly.org/accessibility/overview[PatternFly, Accessibility overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20261008072120/https://www.patternfly.org/accessibility/overview/[Archived copy]
+* link:https://www.w3.org/TR/WCAG22/[Web Content Accessibility Guidelines (WCAG) 2.2], W3C, W3C Recommendation, 2024-12-12. link:https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/[Archived copy]
+* link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Standard sur l'accessibilité des sites Web (SGQRI 008 3.0)], Ministère de la Cybersécurité et du Numérique, 3.0, in force since 2024-04-29, 2026-06-08. link:https://web.archive.org/web/20261103004830/https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Archived copy]
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

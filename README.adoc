@@ -1,30 +1,24 @@
-= FPSOT specification template
+= FPSOT style specification
 
-This repository is the starting point for an FPSOT specification.
-Create a new repository from it, then replace this text.
-
-== Start a specification
-
-. Set `SPEC_PREFIX` in `.github/workflows/ci.yml` to the three-letter prefix of the requirement IDs.
-. Replace the titles in `spec/`, `docs/antora.yml`, `publiccode.yml`, `AGENTS.md`, `NOTICE` and `skill/SKILL.md`.
-. Replace the example requirement TPL-001 and the example row in `jurisdictions/baseline.yaml`.
-. List each spec page in `spec/<lang>/book.adoc`. The glossary stays the last include.
-
-Each page ends with a document history.
-Each guide page sets `:page-type:` to tutorial, how-to, reference or explanation.
-Write abbreviations and defined terms as `{abbr-…}` and `{term-…}` from the term base of `fpsot-spec-writing`.
-The continuous integration writes `_fpsot-terms.adoc`, the glossaries and the comparison pages. Git ignores them.
+Rules for the visual look of the screens of FPSOT products: design tokens in the Design Tokens Format Module 2025.10, component states, errors, loading and empty states, destructive actions, and themes.
+The FPSOT default theme is PatternFly as published. The Québec theme follows the Système de design gouvernemental, and the Canada theme follows the GC Design System and Canada.ca.
+Every accessibility value comes from the FPSOT accessibility specification.
+Version 0.1 is a draft.
 
 == Implement this spec
 
 Read the normative text in `spec/en/` or `spec/fr/`.
-Each requirement has an ID, such as `XYZ-001`.
-Check your implementation against every requirement.
+Start with `index.adoc`, then read the seven parts.
+Each requirement has an ID from `STY-001` to `STY-065`.
+A product checks its screens against every MUST rule on tokens, components and destructive actions.
+A theme checks itself against every MUST rule on themes and on checking a theme, and publishes its check record.
 
 == Adopt this spec
 
-Read the guides in `docs/modules/en/pages/` or `docs/modules/fr/pages/`.
-They explain what the spec gives your organisation and how to require it.
+Read the guide in `docs/modules/en/pages/index.adoc` or `docs/modules/fr/pages/index.adoc`.
+It shows how to build a theme for a jurisdiction and check it before release.
+A government body chooses the theme of its jurisdiction, adds its own marks in the header and footer, and records any binding behavior rule that differs from this spec.
+The comparison pages show how the design systems of Canada and Québec relate to each requirement.
 
 == Layout
 
@@ -42,16 +36,16 @@ They explain what the spec gives your organisation and how to require it.
 | The agent skill: a short summary that cites requirement IDs.
 
 | `rules/`
-| Machine-checkable rules.
+| Machine-checkable rules. None yet.
 
 | `diagrams/`
-| PlantUML sources and their rendered SVG files.
+| PlantUML sources and their rendered SVG files. None yet.
 
 | `jurisdictions/`
-| Comparison data per jurisdiction. `baseline.yaml` lists the compared requirements.
+| Comparison data: the international baseline, Canada and Québec.
 |===
 
-== Licence
+== License
 
 The specification is under the Community Specification License 1.0.
 Source code is under the Apache License 2.0.

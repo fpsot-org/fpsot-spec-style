@@ -1,12 +1,123 @@
 # Comparison data. The format is defined by fpsot-spec-doc (model/jurisdiction.yaml).
-# This example row compares requirement TPL-001. Replace it with the rows of this specification.
-# Add one file per jurisdiction, such as ca.yaml or ca/qc.yaml, only when a source exists.
+# For this specification, the FPSOT default is the PatternFly default theme with the STY rules applied.
 topics:
-  keywords: {en: Requirement keywords, fr: Mots clés des exigences}
+  token-format: {en: Token format, fr: Format des jetons}
+  token-tiers: {en: Base and semantic tokens, fr: Jetons de base et jetons sémantiques}
+  token-names: {en: Token names, fr: Noms des jetons}
+  color: {en: Color, fr: Couleur}
+  typography: {en: Typography, fr: Typographie}
+  spacing: {en: Spacing, fr: Espacement}
+  elevation: {en: Elevation, fr: Élévation}
+  motion: {en: Motion, fr: Mouvement}
+  focus: {en: Focus, fr: Focus}
+  disabled: {en: Disabled controls, fr: Commandes désactivées}
+  validation: {en: Validation, fr: Validation}
+  error-messages: {en: Error messages, fr: Messages d’erreur}
+  error-summary: {en: Error summary, fr: Sommaire des erreurs}
+  destructive-actions: {en: Destructive actions, fr: Actions destructrices}
+  theme-marks: {en: Official marks, fr: Marques officielles}
+  government-behavior: {en: Government behavior rules, fr: Règles de comportement des gouvernements}
+  theme-check: {en: Checking a theme, fr: Vérification d’un thème}
 rows:
-  - id: TPL-001
-    topic: keywords
-    requirement: {en: Use the BCP 14 keywords., fr: Utiliser les mots clés du BCP 14.}
-    international: {en: "BCP 14 defines MUST, SHOULD and MAY. Only the capital forms carry that meaning.", fr: "Le BCP 14 définit MUST, SHOULD et MAY. Seules les majuscules ont ce sens."}
-    international_source: {title: "RFC 8174, Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words (BCP 14)", version: "BCP 14", date: "2017-05", url: "https://www.rfc-editor.org/info/rfc8174", archive: "https://web.archive.org/web/20261103005743/https://www.rfc-editor.org/info/rfc8174/"}
-    fpsot: {en: "Keywords in capitals, with a fixed French mapping.", fr: "Mots clés en majuscules, avec une correspondance française fixe."}
+  - id: STY-002
+    topic: token-format
+    requirement: {en: "Token files use the Design Tokens Format Module 2025.10.", fr: "Les fichiers de jetons suivent le Design Tokens Format Module 2025.10."}
+    international: {en: "A JSON format in which each token has a $value and a $type, and groups nest tokens. Aliases use curly braces. The group declares version 2025.10 stable, but it is not a W3C Recommendation.", fr: "Format JSON où chaque jeton a une propriété $value et une propriété $type, et où des groupes contiennent les jetons. Les alias emploient des accolades. Le groupe déclare la version 2025.10 stable, mais ce n’est pas une recommandation du W3C."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "Token files in the 2025.10 format, mapped to the tokens of PatternFly 6.7.0. PatternFly itself ships its tokens as CSS custom properties.", fr: "Fichiers de jetons au format 2025.10, associés aux jetons de PatternFly 6.7.0. PatternFly fournit lui-même ses jetons sous forme de propriétés personnalisées CSS."}
+  - id: STY-003
+    topic: token-tiers
+    requirement: {en: "Components use semantic tokens, which refer to base tokens.", fr: "Les composants emploient des jetons sémantiques, qui renvoient à des jetons de base."}
+    international: {en: "A token can refer to another token by an alias. The format sets no tiers.", fr: "Un jeton peut renvoyer à un autre jeton par un alias. Le format ne fixe aucun niveau."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "Base and semantic tiers, and components use semantic tokens only. PatternFly has palette, base and semantic tokens, and tells products to use the semantic ones.", fr: "Un niveau de base et un niveau sémantique, et les composants n’emploient que les jetons sémantiques. PatternFly a des jetons de palette, de base et sémantiques, et demande aux produits d’employer les jetons sémantiques."}
+  - id: STY-005
+    topic: token-names
+    requirement: {en: "Token names take their words from the naming specification. Their paths follow the Design Tokens format, with kebab-case segments and numeric scale steps.", fr: "Les noms des jetons prennent leurs mots dans la spécification de nommage. Leurs chemins suivent le format Design Tokens, avec des segments kebab-case et des pas d’échelle numériques."}
+    international: {en: "A name must not start with $ or contain a brace or a dot. Names that differ only by case are valid, but tools may flag them.", fr: "Un nom ne doit pas commencer par $ ni contenir d’accolade ou de point. Les noms qui ne diffèrent que par la casse sont valides, mais les outils peuvent les signaler."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "Words from the naming specification, kebab-case segments, and CSS names that join segments with two hyphens. PatternFly names follow the same pattern, with the prefix --pf-t.", fr: "Mots de la spécification de nommage, segments kebab-case, et noms CSS qui joignent les segments par deux traits d’union. Les noms de PatternFly suivent le même modèle, avec le préfixe --pf-t."}
+  - id: STY-010
+    topic: color
+    requirement: {en: "Semantic color tokens cover every role, and each foreground token lists its backgrounds.", fr: "Les jetons de couleur sémantiques couvrent chaque rôle, et chaque jeton d’avant-plan indique ses arrière-plans."}
+    international: {en: "A color token names its color space and gives its components, with an optional hex fallback. Fourteen color spaces are allowed.", fr: "Un jeton de couleur nomme son espace colorimétrique et donne ses composantes, avec une valeur hexadécimale de secours facultative. Quatorze espaces colorimétriques sont permis."}
+    international_source: {title: "Design Tokens Color Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/color/", archive: "https://web.archive.org/web/20261022221843/https://www.designtokens.org/tr/2025.10/color/"}
+    fpsot: {en: "Tokens for text, links, backgrounds, borders, focus, the disabled state and four status roles. PatternFly values, such as #151515 for text and #0066cc for links.", fr: "Jetons pour le texte, les liens, les arrière-plans, les bordures, le focus, l’état désactivé et quatre rôles d’état. Valeurs de PatternFly, comme #151515 pour le texte et #0066cc pour les liens."}
+  - id: STY-011
+    topic: typography
+    requirement: {en: "Font families have generic fallbacks, and font sizes use rem units.", fr: "Les familles de polices ont une police générique de secours, et les tailles emploient l’unité rem."}
+    international: {en: "The format has fontFamily, fontWeight and typography types. It sets no sizes and no fonts.", fr: "Le format a les types fontFamily, fontWeight et typography. Il ne fixe ni taille ni police."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "PatternFly fonts: Red Hat Text for body text and Red Hat Display for headings. Body text is 0.875rem, or 14 pixels at the default text size.", fr: "Polices de PatternFly : Red Hat Text pour le corps du texte et Red Hat Display pour les titres. Le corps du texte mesure 0,875 rem, soit 14 pixels à la taille de texte par défaut."}
+  - id: STY-012
+    topic: spacing
+    requirement: {en: "Spacing comes from one fixed scale in rem units.", fr: "L’espacement vient d’une seule échelle fixe en unités rem."}
+    international: {en: "The dimension type holds a number with the unit px or rem, and allows no other unit. The format sets no scale.", fr: "Le type dimension contient un nombre avec l’unité px ou rem, et ne permet aucune autre unité. Le format ne fixe aucune échelle."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "The PatternFly scale, with steps of 0.25rem, 0.5rem, 1rem, 1.5rem and up.", fr: "L’échelle de PatternFly, avec des pas de 0,25 rem, 0,5 rem, 1 rem, 1,5 rem et plus."}
+  - id: STY-014
+    topic: elevation
+    requirement: {en: "Elevation is a short list of shadow levels, each tied to a role.", fr: "L’élévation est une courte liste de niveaux d’ombre, chacun lié à un rôle."}
+    international: {en: "The shadow type holds a color, two offsets, a blur, a spread and an inset flag. It sets no levels.", fr: "Le type shadow contient une couleur, deux décalages, un flou, une extension et un indicateur d’ombre intérieure. Il ne fixe aucun niveau."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "PatternFly small, medium and large shadows. A layer above the page should also have a border or a backdrop.", fr: "Ombres petite, moyenne et grande de PatternFly. Une couche au-dessus de la page devrait aussi avoir une bordure ou un fond."}
+  - id: STY-015
+    topic: motion
+    requirement: {en: "Durations and easing come from tokens, and one setting can stop all motion.", fr: "Les durées et les courbes d’accélération viennent de jetons, et un seul réglage peut arrêter tout mouvement."}
+    international: {en: "The format has duration and cubicBezier types. It sets no values.", fr: "Le format a les types duration et cubicBezier. Il ne fixe aucune valeur."}
+    international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
+    fpsot: {en: "PatternFly durations of 100, 200 and 300 milliseconds. PatternFly applies them only when the person has not asked for reduced motion.", fr: "Durées de PatternFly de 100, 200 et 300 millisecondes. PatternFly ne les applique que si la personne n’a pas demandé de réduire le mouvement."}
+  - id: STY-021
+    topic: focus
+    requirement: {en: "Each interactive component shows a focus indicator made from the focus tokens.", fr: "Chaque composant interactif affiche un indicateur de focus fait des jetons de focus."}
+    international: {en: "An interface that works with a keyboard has a visible focus indicator (2.4.7, level AA). The size of the indicator is a level AAA criterion (2.4.13).", fr: "Une interface utilisable au clavier a un indicateur de focus visible (2.4.7, niveau AA). La taille de l’indicateur est un critère de niveau AAA (2.4.13)."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "Focus tokens used only for focus, added to the hover look. PatternFly draws a blue focus ring, 2 pixels wide, with a 2-pixel offset.", fr: "Jetons de focus réservés au focus, ajoutés à l’aspect du survol. PatternFly trace un anneau de focus bleu de 2 pixels de largeur, décalé de 2 pixels."}
+  - id: STY-024
+    topic: disabled
+    requirement: {en: "Products keep buttons active and explain what is missing, instead of disabling them.", fr: "Les produits gardent les boutons actifs et expliquent ce qui manque, au lieu de les désactiver."}
+    international: {en: "Inactive components are exempt from the contrast minimums (1.4.3 and 1.4.11). WCAG does not say when to disable a control.", fr: "Les composants inactifs sont exemptés des contrastes minimaux (1.4.3 et 1.4.11). Les WCAG ne disent pas quand désactiver une commande."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "Buttons stay active, and a disabled control states why. PatternFly disables the submit button of short forms until they are complete, and STY-024 overrides that advice.", fr: "Les boutons restent actifs, et une commande désactivée indique pourquoi. PatternFly désactive le bouton d’envoi des formulaires courts tant qu’ils sont incomplets, et STY-024 remplace ce conseil."}
+  - id: STY-030
+    topic: validation
+    requirement: {en: "Fields are checked when the person leaves them or submits, never during typing.", fr: "Les champs sont vérifiés quand la personne les quitte ou envoie le formulaire, jamais pendant la saisie."}
+    international: {en: "Each detected input error is identified and described in text (3.3.1, level A). WCAG sets no timing.", fr: "Chaque erreur de saisie détectée est signalée et décrite par du texte (3.3.1, niveau A). Les WCAG ne fixent aucun moment."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "On leaving a field or on submit, and the server checks again. PatternFly validates on loss of focus or on submit.", fr: "À la sortie d’un champ ou à l’envoi, et le serveur vérifie de nouveau. PatternFly valide à la perte du focus ou à l’envoi."}
+  - id: STY-031
+    topic: error-messages
+    requirement: {en: "Each field error shows next to its field and names one problem and its fix.", fr: "Chaque erreur de champ s’affiche près de son champ et nomme un problème et sa correction."}
+    international: {en: "When a fix is known, the error message suggests it (3.3.3, level AA).", fr: "Quand une correction est connue, le message d’erreur la suggère (3.3.3, niveau AA)."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "Danger tokens and an icon. The product or the engine sets the position in the markup, never the theme. PatternFly puts the message below the field, in place of the helper text.", fr: "Jetons de danger et une icône. Le produit ou le moteur fixe la position dans le balisage, jamais le thème. PatternFly place le message sous le champ, à la place du texte d’aide."}
+  - id: STY-032
+    topic: error-summary
+    requirement: {en: "When a product shows an error summary, it sits above the form and lists the errors in field order.", fr: "Quand un produit affiche un sommaire des erreurs, celui-ci se place au-dessus du formulaire et énumère les erreurs dans l’ordre des champs."}
+    international: {en: "Errors are identified in text (3.3.1, level A). WCAG does not require a summary.", fr: "Les erreurs sont signalées par du texte (3.3.1, niveau A). Les WCAG n’exigent pas de sommaire."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "A summary above the form, in field order. The FPSOT accessibility specification sets when a summary is needed, and its links and focus. PatternFly adds an inline alert below the form heading, as well as the field errors.", fr: "Un sommaire au-dessus du formulaire, dans l’ordre des champs. La spécification de la FPSOT sur l’accessibilité fixe quand un sommaire est requis, ainsi que ses liens et le focus. PatternFly ajoute une alerte en ligne sous le titre du formulaire, en plus des erreurs des champs."}
+  - id: STY-041
+    topic: destructive-actions
+    requirement: {en: "An action that cannot be undone asks for confirmation in a dialog with a specific button label.", fr: "Une action irréversible demande une confirmation dans une boîte de dialogue au libellé de bouton précis."}
+    international: {en: "For an action that is hard to undo, focus can start on the least destructive action of the dialog. The pattern does not require a confirmation step.", fr: "Pour une action difficile à annuler, le focus peut commencer sur l’action la moins destructrice de la boîte de dialogue. Le modèle n’exige pas d’étape de confirmation."}
+    international_source: {title: "ARIA Authoring Practices Guide, Dialog (Modal) Pattern", url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/", archive: "https://web.archive.org/web/20261026080539/https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"}
+    fpsot: {en: "A dialog that names the object and the result, and a button that repeats the verb, never OK. PatternFly asks for a confirmation modal with action verbs, and a danger button for serious results.", fr: "Une boîte de dialogue qui nomme l’objet et le résultat, et un bouton qui reprend le verbe, jamais OK. PatternFly demande une fenêtre de confirmation avec des verbes d’action, et un bouton de danger pour les conséquences graves."}
+  - id: STY-052
+    topic: theme-marks
+    requirement: {en: "Themes contain no official marks. The government body adds its own.", fr: "Les thèmes ne contiennent aucune marque officielle. L’organisme public ajoute les siennes."}
+    international: {en: "The resolver module combines token sets for contexts such as a theme or a color scheme. It does not cover marks.", fr: "Le module de résolution combine des ensembles de jetons selon des contextes, comme un thème ou un jeu de couleurs. Il ne traite pas des marques."}
+    international_source: {title: "Design Tokens Resolver Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/resolver/", archive: "https://web.archive.org/web/20261012112617/https://www.designtokens.org/tr/2025.10/resolver/"}
+    fpsot: {en: "No marks in any theme. The engine gives the header and footer a place for the marks of the body. PatternFly carries no government marks.", fr: "Aucune marque dans un thème. Le moteur réserve une place dans l’en-tête et le pied de page pour les marques de l’organisme. PatternFly ne porte aucune marque gouvernementale."}
+  - id: STY-056
+    topic: government-behavior
+    requirement: {en: "Themes carry no behavior. A product records each difference from a binding government rule.", fr: "Les thèmes ne portent aucun comportement. Un produit consigne chaque écart par rapport à une règle gouvernementale obligatoire."}
+    international: {en: "A theme is a set of token values chosen by context. The module has no notion of behavior.", fr: "Un thème est un ensemble de valeurs de jetons choisi selon le contexte. Le module n’a aucune notion de comportement."}
+    international_source: {title: "Design Tokens Resolver Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/resolver/", archive: "https://web.archive.org/web/20261012112617/https://www.designtokens.org/tr/2025.10/resolver/"}
+    fpsot: {en: "Color, type and layout only. The STY behavior rules apply in every theme, and each binding difference is recorded.", fr: "Couleur, typographie et mise en page seulement. Les règles de comportement STY s’appliquent dans chaque thème, et chaque écart obligatoire est consigné."}
+  - id: STY-060
+    topic: theme-check
+    requirement: {en: "Every theme is checked against the accessibility rules before each release.", fr: "Chaque thème est vérifié selon les règles d’accessibilité avant chaque version."}
+    international: {en: "Conformance applies to full pages, never to a part of a page such as a theme alone.", fr: "La conformité s’applique à des pages complètes, jamais à une partie de page comme un thème seul."}
+    international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
+    fpsot: {en: "Each theme is checked, the PatternFly default included. PatternFly states a WCAG 2.2 level AA target for its own components, which is not a check.", fr: "Chaque thème est vérifié, y compris le thème PatternFly par défaut. PatternFly annonce une cible WCAG 2.2 niveau AA pour ses propres composants, ce qui n’est pas une vérification."}

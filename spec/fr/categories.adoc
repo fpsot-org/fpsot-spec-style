@@ -1,0 +1,117 @@
+= Catégories de jetons
+include::_fpsot-terms.adoc[]
+
+Ces règles fixent les catégories de jetons sémantiques du contrat des jetons de la {abbr-fpsot-first}.
+Chaque catégorie emploie un type du link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
+Un thème donne les valeurs.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe les limites que ces valeurs doivent respecter.
+
+== Couleur
+
+[[STY-010]]
+*STY-010.* Le contrat DOIT contenir des jetons de couleur sémantiques pour ces rôles :
+
+* le texte, les liens, les arrière-plans et les bordures;
+* le focus et l’état désactivé;
+* les quatre rôles d’état : danger, avertissement, succès et information.
+
+Les jetons de lien DOIVENT couvrir l’état par défaut, le survol et l’état visité.
+Un jeton de texte, d’icône, de bordure ou de focus DOIT nommer ses jetons d’arrière-plan possibles.
+La liste va dans `$extensions`, sous la clé `org.fpsot.style`, comme le montre l’exemple.
+La vérification de STY-061 connaît alors chaque paire de couleurs à tester.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "text": {
+      "danger": {
+        "$value": "{color.red.60}",
+        "$extensions": { "org.fpsot.style": { "on": ["color.background.page", "color.background.surface"] } }
+      }
+    }
+  }
+}
+----
+
+== Typographie
+
+[[STY-011]]
+*STY-011.* Le contrat DOIT contenir des jetons de police pour le corps du texte, les titres et le code.
+Chaque jeton de police DOIT terminer sa liste par une famille générique, comme `sans-serif` ou `monospace`.
+Les jetons de taille de police DOIVENT employer l’unité `rem`, et les jetons d’interligne DOIVENT être des nombres sans unité.
+Les tailles en `rem` suivent la taille de texte que la personne choisit dans le navigateur.
+Un thème NE DOIT PAS inclure un fichier de police, sauf si sa licence permet au produit de le redistribuer.
+
+== Espacement
+
+[[STY-012]]
+*STY-012.* Les jetons d’espacement DOIVENT former une seule échelle fixe de jetons de dimension en `rem`.
+Les composants DOIVENT employer seulement les pas de l’échelle pour les marges, les marges intérieures et les écarts.
+Un thème fixe la taille des pas, par exemple 4 ou 8 pixels à la taille de texte par défaut.
+Une seule échelle garde chaque écran aligné, et un thème peut changer tout le rythme d’un coup.
+
+== Arrondis
+
+[[STY-013]]
+*STY-013.* Le contrat DOIT contenir des jetons d’arrondi pour les petits, moyens et grands coins.
+Il DOIT aussi en contenir un pour la forme de pilule.
+Un thème PEUT mettre un arrondi à zéro pour des coins carrés.
+Les composants NE DOIVENT PAS fixer leur propre arrondi.
+
+== Élévation
+
+[[STY-014]]
+*STY-014.* Les jetons d’élévation DOIVENT former une courte liste de niveaux `shadow`, chacun lié à un rôle.
+Les rôles sont le contenu à plat, les éléments surélevés comme les cartes et les éléments flottants comme les menus.
+Le dernier rôle est celui des couches, comme les boîtes de dialogue.
+Une couche au-dessus de la page DEVRAIT aussi avoir une bordure ou un fond, et pas seulement une ombre.
+Les ombres peuvent disparaître en mode de couleurs forcées, et certaines personnes voient mal les ombres pâles.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe le contraste que demande cette bordure.
+
+== Mouvement
+
+[[STY-015]]
+*STY-015.* Chaque animation et chaque transition DOIT prendre sa durée d’un jeton `duration`.
+Elle DOIT prendre sa courbe d’accélération d’un jeton `cubicBezier`.
+L’ensemble de jetons DOIT permettre à un produit de mettre toutes les durées à zéro à un seul endroit.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe quand un produit arrête ou réduit le mouvement.
+Un seul endroit pour tout le mouvement rend cette règle simple à respecter et à tester.
+
+== Mise en page
+
+[[STY-016]]
+*STY-016.* Le contrat DOIT contenir des jetons pour les points de rupture et la largeur de la zone de contenu.
+Il DOIT aussi contenir un jeton pour la plus longue ligne de texte.
+Les points de rupture et les largeurs DOIVENT être des jetons de type dimension en `rem`.
+Le link:https://www.designtokens.org/tr/2025.10/format/[format Design Tokens] permet cette unité, mais son type dimension n’a pas d’unité `ch`.
+La longueur de ligne DOIT être un jeton `number` de caractères, avec l’unité `ch` dans `$extensions` sous `org.fpsot.style`.
+Une mise en page suit alors la taille de texte de la personne, et pas seulement la largeur de l’écran.
+
+[source,json]
+----
+{
+  "layout": {
+    "line-length": {
+      "$type": "number",
+      "$value": 65,
+      "$extensions": { "org.fpsot.style": { "unit": "ch" } }
+    }
+  }
+}
+----
+
+== Références
+
+=== Références normatives
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Copie archivée]
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===

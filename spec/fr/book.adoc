@@ -4,4 +4,18 @@
 
 include::index.adoc[leveloffset=+1]
 
+include::tokens.adoc[leveloffset=+1]
+
+include::categories.adoc[leveloffset=+1]
+
+include::states.adoc[leveloffset=+1]
+
+include::feedback.adoc[leveloffset=+1]
+
+include::destructive.adoc[leveloffset=+1]
+
+include::themes.adoc[leveloffset=+1]
+
+include::theme-check.adoc[leveloffset=+1]
+
 include::glossary.adoc[leveloffset=+1]
