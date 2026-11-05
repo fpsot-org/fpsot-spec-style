@@ -20,7 +20,7 @@ Un thème fixe la plupart des couleurs et des tailles que testent les règles d�
 [[STY-061]]
 *STY-061.* La vérification des jetons DOIT tester chaque paire que nomme STY-010, dans chaque jeu de couleurs du thème.
 Chaque paire DOIT respecter la règle de contraste de la spécification de la {abbr-fpsot} sur l’accessibilité pour son usage.
-Les usages comprennent le texte, le gros texte et les indicateurs de focus.
+Les usages comprennent le texte, le grand texte et les indicateurs de focus.
 La vérification DOIT aussi confirmer que le thème donne une valeur à chaque jeton du contrat.
 Un outil lit les fichiers de jetons et fait cette vérification sans navigateur.
 
@@ -61,9 +61,9 @@ La correction atteint alors chaque produit qui emploie la même source.
 == Vérifications propres à une collectivité publique
 
 [[STY-065]]
-*STY-065.* Le thème du Québec DOIT aussi réussir les vérifications du Québec de la spécification sur l’accessibilité.
-Ces vérifications viennent du link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0].
-Le thème du Canada DOIT aussi réussir les vérifications du Canada de cette spécification.
+*STY-065.* Chaque thème d’une collectivité publique DOIT respecter la base de la spécification de la {abbr-fpsot} sur l’accessibilité.
+Cette base comprend déjà les critères que le link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0] ajoute pour le Québec.
+Les deux thèmes visent alors une seule cible, et une seule vérification sert aux deux.
 Chaque thème d’une collectivité publique sert là où s’appliquent ses règles.
 
 == Références

@@ -23,4 +23,4 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 ### Known gaps
 
 - The FPSOT semantic token set itself (the list of token names) is not yet published. Version 0.1 sets its categories and rules only.
-- The naming specification has no case style for tokens yet. STY-005 sets kebab-case until it does.
+- The naming specification has no row for design tokens yet. STY-005 sets their form from the Design Tokens format until it does.

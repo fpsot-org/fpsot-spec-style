@@ -33,7 +33,7 @@ rows:
     fpsot: {en: "Base and semantic tiers, and components use semantic tokens only. PatternFly has palette, base and semantic tokens, and tells products to use the semantic ones.", fr: "Un niveau de base et un niveau sémantique, et les composants n’emploient que les jetons sémantiques. PatternFly a des jetons de palette, de base et sémantiques, et demande aux produits d’employer les jetons sémantiques."}
   - id: STY-005
     topic: token-names
-    requirement: {en: "Token names follow the naming specification, in kebab-case segments.", fr: "Les noms des jetons suivent la spécification de nommage, en segments kebab-case."}
+    requirement: {en: "Token names take their words from the naming specification. Their paths follow the Design Tokens format, with kebab-case segments and numeric scale steps.", fr: "Les noms des jetons prennent leurs mots dans la spécification de nommage. Leurs chemins suivent le format Design Tokens, avec des segments kebab-case et des pas d’échelle numériques."}
     international: {en: "A name must not start with $ or contain a brace or a dot. Names that differ only by case are valid, but tools may flag them.", fr: "Un nom ne doit pas commencer par $ ni contenir d’accolade ou de point. Les noms qui ne diffèrent que par la casse sont valides, mais les outils peuvent les signaler."}
     international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
     fpsot: {en: "Words from the naming specification, kebab-case segments, and CSS names that join segments with two hyphens. PatternFly names follow the same pattern, with the prefix --pf-t.", fr: "Mots de la spécification de nommage, segments kebab-case, et noms CSS qui joignent les segments par deux traits d’union. Les noms de PatternFly suivent le même modèle, avec le préfixe --pf-t."}
@@ -52,7 +52,7 @@ rows:
   - id: STY-012
     topic: spacing
     requirement: {en: "Spacing comes from one fixed scale in rem units.", fr: "L’espacement vient d’une seule échelle fixe en unités rem."}
-    international: {en: "The dimension type holds a number with the unit px or rem. The format sets no scale.", fr: "Le type dimension contient un nombre avec l’unité px ou rem. Le format ne fixe aucune échelle."}
+    international: {en: "The dimension type holds a number with the unit px or rem, and allows no other unit. The format sets no scale.", fr: "Le type dimension contient un nombre avec l’unité px ou rem, et ne permet aucune autre unité. Le format ne fixe aucune échelle."}
     international_source: {title: "Design Tokens Format Module 2025.10", version: "Final Community Group Report", date: "2025-10-28", url: "https://www.designtokens.org/tr/2025.10/format/", archive: "https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/"}
     fpsot: {en: "The PatternFly scale, with steps of 0.25rem, 0.5rem, 1rem, 1.5rem and up.", fr: "L’échelle de PatternFly, avec des pas de 0,25 rem, 0,5 rem, 1 rem, 1,5 rem et plus."}
   - id: STY-014
@@ -90,13 +90,13 @@ rows:
     requirement: {en: "Each field error shows next to its field and names one problem and its fix.", fr: "Chaque erreur de champ s’affiche près de son champ et nomme un problème et sa correction."}
     international: {en: "When a fix is known, the error message suggests it (3.3.3, level AA).", fr: "Quand une correction est connue, le message d’erreur la suggère (3.3.3, niveau AA)."}
     international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
-    fpsot: {en: "Danger tokens and an icon, with the position set by the theme. PatternFly puts the message below the field, in place of the helper text.", fr: "Jetons de danger et une icône, à la position que fixe le thème. PatternFly place le message sous le champ, à la place du texte d’aide."}
+    fpsot: {en: "Danger tokens and an icon. The product or the engine sets the position in the markup, never the theme. PatternFly puts the message below the field, in place of the helper text.", fr: "Jetons de danger et une icône. Le produit ou le moteur fixe la position dans le balisage, jamais le thème. PatternFly place le message sous le champ, à la place du texte d’aide."}
   - id: STY-032
     topic: error-summary
-    requirement: {en: "A form with errors shows a summary above it, with links to the fields.", fr: "Un formulaire avec des erreurs affiche un sommaire au-dessus de lui, avec des liens vers les champs."}
+    requirement: {en: "When a product shows an error summary, it sits above the form and lists the errors in field order.", fr: "Quand un produit affiche un sommaire des erreurs, celui-ci se place au-dessus du formulaire et énumère les erreurs dans l’ordre des champs."}
     international: {en: "Errors are identified in text (3.3.1, level A). WCAG does not require a summary.", fr: "Les erreurs sont signalées par du texte (3.3.1, niveau A). Les WCAG n’exigent pas de sommaire."}
     international_source: {title: "Web Content Accessibility Guidelines (WCAG) 2.2", version: "W3C Recommendation", date: "2024-12-12", url: "https://www.w3.org/TR/WCAG22/", archive: "https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/"}
-    fpsot: {en: "A summary in field order, with links, and focus moves to it. PatternFly adds an inline alert below the form heading, as well as the field errors.", fr: "Un sommaire dans l’ordre des champs, avec des liens, et le focus s’y déplace. PatternFly ajoute une alerte en ligne sous le titre du formulaire, en plus des erreurs des champs."}
+    fpsot: {en: "A summary above the form, in field order. The FPSOT accessibility specification sets when a summary is needed, and its links and focus. PatternFly adds an inline alert below the form heading, as well as the field errors.", fr: "Un sommaire au-dessus du formulaire, dans l’ordre des champs. La spécification de la FPSOT sur l’accessibilité fixe quand un sommaire est requis, ainsi que ses liens et le focus. PatternFly ajoute une alerte en ligne sous le titre du formulaire, en plus des erreurs des champs."}
   - id: STY-041
     topic: destructive-actions
     requirement: {en: "An action that cannot be undone asks for confirmation in a dialog with a specific button label.", fr: "Une action irréversible demande une confirmation dans une boîte de dialogue au libellé de bouton précis."}

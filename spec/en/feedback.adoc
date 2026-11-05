@@ -16,17 +16,19 @@ A person can also bypass a check in the browser.
 [[STY-031]]
 *STY-031.* Each field error MUST show next to its field, with the danger tokens and an icon.
 Each message MUST name one problem and how to fix it.
-A theme sets whether the message sits above or below the field.
-The product keeps that one position on all its screens.
 The message and its timing stay the same in every theme.
 The {abbr-fpsot} accessibility specification sets how assistive technology finds the message of a field.
 
+The product or the engine sets the position above or below the field, in the markup.
+The product keeps that one position on all its screens.
+A binding government rule can set it: above the field in the GC Design System, below it in Québec.
+The product then records that position as a difference, as STY-056 asks.
+
 [[STY-032]]
-*STY-032.* When a submitted form has errors, the page MUST show an error summary above the form.
-The summary MUST list each error in the order of the fields.
-Each item MUST link to its field, and the link MUST move focus to the field.
-Focus MUST move to the summary when it appears.
+*STY-032.* When a product shows an error summary, the summary MUST sit above the form.
+It MUST list the errors in the order of the fields.
 Each item repeats the text of its field message.
+The {abbr-fpsot} accessibility specification sets when a form needs a summary, and how the summary handles links and focus.
 A person who submits a long form then learns at once how many problems there are, and where.
 
 [[STY-033]]

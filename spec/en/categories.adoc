@@ -82,8 +82,23 @@ One place for all motion makes that rule simple to meet and to test.
 [[STY-016]]
 *STY-016.* The contract MUST hold layout tokens for the breakpoints and the width of the content area.
 It MUST also hold a token for the longest line of text.
-Breakpoints and widths MUST use `rem` or `em` units, and the line length MUST use `ch` units.
+Breakpoints and widths MUST be dimension tokens in `rem`, a unit that the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens format] allows.
+The line length MUST be a `number` token of characters, with the unit `ch` in `$extensions` under `org.fpsot.style`.
+The dimension type of that format has no `ch` unit.
 A layout then follows the text size of the person, not only the width of the screen.
+
+[source,json]
+----
+{
+  "layout": {
+    "line-length": {
+      "$type": "number",
+      "$value": 65,
+      "$extensions": { "org.fpsot.style": { "unit": "ch" } }
+    }
+  }
+}
+----
 
 == References
 

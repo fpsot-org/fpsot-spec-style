@@ -84,9 +84,23 @@ Un seul endroit pour tout le mouvement rend cette règle simple à respecter et 
 [[STY-016]]
 *STY-016.* Le contrat DOIT contenir des jetons pour les points de rupture et la largeur de la zone de contenu.
 Il DOIT aussi contenir un jeton pour la plus longue ligne de texte.
-Les points de rupture et les largeurs DOIVENT employer l’unité `rem` ou `em`.
-La longueur de ligne DOIT employer l’unité `ch`.
+Les points de rupture et les largeurs DOIVENT être des jetons de type dimension en `rem`.
+Le link:https://www.designtokens.org/tr/2025.10/format/[format Design Tokens] permet cette unité, mais son type dimension n’a pas d’unité `ch`.
+La longueur de ligne DOIT être un jeton `number` de caractères, avec l’unité `ch` dans `$extensions` sous `org.fpsot.style`.
 Une mise en page suit alors la taille de texte de la personne, et pas seulement la largeur de l’écran.
+
+[source,json]
+----
+{
+  "layout": {
+    "line-length": {
+      "$type": "number",
+      "$value": 65,
+      "$extensions": { "org.fpsot.style": { "unit": "ch" } }
+    }
+  }
+}
+----
 
 == Références
 

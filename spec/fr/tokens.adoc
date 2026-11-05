@@ -63,16 +63,21 @@ Le nom d’un jeton sémantique DOIT donner un rôle, et un état s’il y a lie
 Par exemple, `color.text.danger` et `color.background.action.hover`.
 Un nom sémantique NE DOIT PAS nommer une valeur, comme `red` ou `14px`.
 Un nom lié à une valeur devient faux dès qu’un thème change la valeur.
+STY-005 permet le pas numérique du nom d’un jeton de base.
 
 == Noms des jetons
 
 [[STY-005]]
-*STY-005.* Les mots du nom d’un jeton DOIVENT suivre la spécification de nommage de la {abbr-fpsot-first}.
-Les noms des jetons sont des noms que lisent les machines, comme les noms des champs.
-Tant que cette spécification ne fixe pas de casse pour les jetons, chaque segment DOIT être en kebab-case, comme `font-family`.
+*STY-005.* Les mots du nom d’un jeton DOIVENT venir du vocabulaire de la spécification de nommage de la {abbr-fpsot-first}.
+La forme du chemin d’un jeton est une exception à cette spécification.
+Elle suit le link:https://www.designtokens.org/tr/2025.10/format/[format Design Tokens], et non les règles des noms des champs {abbr-json-first}.
+Chaque segment DOIT être en kebab-case, comme `font-family`.
+Le pas d’une échelle PEUT être un segment numérique, comme `color.blue.50` ou `spacing.300`.
+Ce format est le format des jetons, et le chemin d’un jeton n’est pas un champ d’une {abbr-api-first}.
+
 Une propriété personnalisée {abbr-css} DOIT commencer par `--fpsot` et joindre les segments par deux traits d’union.
 Par exemple, un outil peut ramener `--fpsot--color--text--danger` au chemin de son jeton.
-Le link:https://www.designtokens.org/tr/2025.10/format/[format Design Tokens] interdit aussi certains caractères dans les noms, comme `{`, `}` et `.`.
+Le format Design Tokens interdit aussi certains caractères dans les noms, comme `{`, `}` et `.`.
 
 == Le contrat des jetons
 

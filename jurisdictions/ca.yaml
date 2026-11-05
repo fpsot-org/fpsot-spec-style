@@ -24,7 +24,7 @@ rows:
   - id: STY-011
     text: {en: "Canada.ca typography is mandatory: Lato for headings and Noto Sans for body text, at 20 pixels on large screens and 18 pixels on small ones. Lines of text stop at 65 characters.", fr: "La typographie de Canada.ca est obligatoire : Lato pour les titres et Noto Sans pour le corps du texte, à 20 pixels sur les grands écrans et 18 pixels sur les petits. Les lignes de texte s’arrêtent à 65 caractères."}
     status: stricter
-    source: {title: "Canada.ca, Typography", date: "2026-09-29", url: "https://design.canada.ca/styles/typography.html", archive: "https://web.archive.org/web/20260606045802/https://design.canada.ca/styles/typography.html"}
+    source: {title: "Canada.ca, Typography", date: "2026-01-29", url: "https://design.canada.ca/styles/typography.html", archive: "https://web.archive.org/web/20260606045802/https://design.canada.ca/styles/typography.html"}
     last_checked: "2026-11-05"
   - id: STY-012
     text: {en: "Spacing tokens use rem units and derive from a base size of 1.25rem. Small steps grow by 0.125rem and larger steps by 0.25rem.", fr: "Les jetons d’espacement emploient l’unité rem et découlent d’une taille de base de 1,25 rem. Les petits pas augmentent de 0,125 rem et les plus grands, de 0,25 rem."}
@@ -37,7 +37,7 @@ rows:
     source: {title: "GC Design System, Colour", date: "2026-11-02", url: "https://design-system.canada.ca/en/foundations/colour/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/pages/en/foundations/colour.mdx"}
     last_checked: "2026-11-05"
   - id: STY-031
-    text: {en: "The error message sits between the hint text and the response area, so above the field, with a warning icon. Each message gives one reason, a specific fix and no blame.", fr: "Le message d’erreur se place entre le texte d’aide et la zone de réponse, donc au-dessus du champ, avec une icône d’avertissement. Chaque message donne une seule raison, une correction précise et aucun blâme."}
+    text: {en: "The error message sits between the hint text and the response area, so above the field, with a warning icon. Each message gives one reason, a specific fix and no blame. Where this rule binds, a product applies the position in its markup and records it as a difference under STY-056.", fr: "Le message d’erreur se place entre le texte d’aide et la zone de réponse, donc au-dessus du champ, avec une icône d’avertissement. Chaque message donne une seule raison, une correction précise et aucun blâme. Là où cette règle s’impose, un produit applique la position dans son balisage et la consigne comme une différence selon STY-056."}
     status: same
     source: {title: "GC Design System, Error message, Design", version: "Component 1.7.0", date: "2026-02-24", url: "https://design-system.canada.ca/en/components/error-message/design/", archive: "https://web.archive.org/web/20261103003034/https://design-system.canada.ca/en/components/error-message/design/"}
     last_checked: "2026-11-05"

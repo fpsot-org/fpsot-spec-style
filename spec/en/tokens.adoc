@@ -62,16 +62,21 @@ The name of a semantic token MUST give a role, and a state where one applies.
 Examples are `color.text.danger` and `color.background.action.hover`.
 A semantic name MUST NOT name a value, such as `red` or `14px`.
 A name tied to a value turns false as soon as a theme changes the value.
+STY-005 allows the numeric step of a base token name.
 
 == Token names
 
 [[STY-005]]
-*STY-005.* The words of a token name MUST follow the {abbr-fpsot-first} naming specification.
-Token names are names that machines read, like the names of fields.
-Until that specification sets a case style for tokens, each segment MUST be in kebab-case, such as `font-family`.
+*STY-005.* The words of a token name MUST come from the vocabulary of the {abbr-fpsot-first} naming specification.
+The form of a token path is an exception to that specification.
+It follows the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens format], not the rules for the names of {abbr-json-first} fields.
+Each segment MUST be in kebab-case, such as `font-family`.
+A step of a scale MAY be a numeric segment, such as `color.blue.50` or `spacing.300`.
+This format is the token format, and a token path is not a field of an {abbr-api-first}.
+
 A {abbr-css} custom property MUST start with `--fpsot` and join the segments with two hyphens.
 An example is `--fpsot--color--text--danger`, and a tool can turn it back into its token path.
-The link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens format] also forbids some characters in names, such as `{`, `}` and `.`.
+The Design Tokens format also forbids some characters in names, such as `{`, `}` and `.`.
 
 == The token contract
 

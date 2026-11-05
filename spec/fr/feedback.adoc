@@ -16,17 +16,19 @@ Une personne peut aussi contourner une vérification faite dans le navigateur.
 [[STY-031]]
 *STY-031.* Chaque erreur de champ DOIT s’afficher près de son champ, avec les jetons de danger et une icône.
 Chaque message DOIT nommer un seul problème et la façon de le corriger.
-Un thème fixe si le message se place au-dessus ou au-dessous du champ.
-Le produit garde cette position unique sur tous ses écrans.
 Le message et le moment où il apparaît restent les mêmes dans chaque thème.
-La spécification de la {abbr-fpsot} sur l’accessibilité fixe la façon dont les aides techniques trouvent le message d’un champ.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe la façon dont les technologies d’assistance trouvent le message d’un champ.
+
+Le produit ou le moteur fixe la position au-dessus ou au-dessous du champ, dans le balisage.
+Le produit garde cette position unique sur tous ses écrans.
+Une règle gouvernementale obligatoire peut la fixer : au-dessus du champ dans le Système de design GC, au-dessous au Québec.
+Le produit consigne alors cette position comme une différence, comme le demande STY-056.
 
 [[STY-032]]
-*STY-032.* Quand un formulaire envoyé contient des erreurs, la page DOIT afficher un sommaire des erreurs au-dessus du formulaire.
-Le sommaire DOIT énumérer les erreurs dans l’ordre des champs.
-Chaque élément DOIT renvoyer à son champ, et le lien DOIT y déplacer le focus.
-Le focus DOIT se déplacer vers le sommaire quand il apparaît.
+*STY-032.* Quand un produit affiche un sommaire des erreurs, le sommaire DOIT se placer au-dessus du formulaire.
+Il DOIT énumérer les erreurs dans l’ordre des champs.
 Chaque élément reprend le texte du message de son champ.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe quand il faut un sommaire, et comment il gère liens et focus.
 Une personne qui envoie un long formulaire apprend alors d’un coup combien de problèmes il y a, et où.
 
 [[STY-033]]
@@ -43,7 +45,7 @@ Il DOIT afficher un indicateur pour une attente plus longue.
 Il DEVRAIT afficher un espace réservé de la forme du contenu quand il la connaît.
 Sinon, il DEVRAIT afficher une roue d’attente.
 Pour une attente aux étapes connues, ou qui peut dépasser cinq secondes, il DOIT afficher une barre de progression.
-La spécification de la {abbr-fpsot} sur l’accessibilité fixe la façon dont les aides techniques apprennent l’attente.
+La spécification de la {abbr-fpsot} sur l’accessibilité fixe la façon dont les technologies d’assistance apprennent l’attente.
 
 [[STY-035]]
 *STY-035.* Pendant qu’une requête s’exécute, la commande qui l’a lancée DOIT afficher un état occupé.

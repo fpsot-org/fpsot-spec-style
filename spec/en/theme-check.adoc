@@ -61,9 +61,9 @@ The fix then reaches every product that uses the same source.
 == Jurisdiction checks
 
 [[STY-065]]
-*STY-065.* The Québec theme MUST also pass the checks for Québec in the {abbr-fpsot} accessibility specification.
-Those checks come from link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0].
-The Canada theme MUST also pass the checks for Canada in that specification.
+*STY-065.* Each jurisdiction theme MUST meet the baseline of the {abbr-fpsot} accessibility specification.
+That baseline already includes the criteria that link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[SGQRI 008 3.0] adds for Québec.
+The two themes then meet one target, and a single check serves both.
 Each jurisdiction theme serves where the rules of that jurisdiction apply.
 
 == References

@@ -29,7 +29,7 @@ rows:
   - id: STY-024
     text: {en: "Avoid disabled buttons in most cases, because they do not say what the person must do. Keep the button active and show a clear error message instead.", fr: "Évitez les boutons inactifs dans la plupart des cas, car ils ne disent pas ce que la personne doit faire. Gardez plutôt le bouton actif et affichez un message d’erreur clair."}
     status: same
-    source: {title: "Système de design gouvernemental, Boutons", date: "2026-10-13", url: "https://design.quebec.ca/design/composants/boutons", archive: "https://web.archive.org/web/20250804161831/https://design.quebec.ca/design/composants/boutons"}
+    source: {title: "Système de design gouvernemental, Boutons", date: "2021-11-24", url: "https://design.quebec.ca/design/composants/boutons", archive: "https://web.archive.org/web/20250804161831/https://design.quebec.ca/design/composants/boutons"}
     last_checked: "2026-11-05"
   - id: STY-030
     text: {en: "Ideally, a field is checked when the person leaves it, never during typing. A check on submit is allowed, but it makes the person fix every error at once.", fr: "Idéalement, un champ est vérifié quand la personne le quitte, jamais pendant la saisie. Une vérification à l’envoi est permise, mais elle oblige la personne à corriger toutes les erreurs à la fois."}
@@ -37,19 +37,19 @@ rows:
     source: {title: "Système de design gouvernemental, Gestion des erreurs", date: "2024-06-05", url: "https://design.quebec.ca/design/bases/gestion-erreurs", archive: "https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/bases/gestion-erreurs"}
     last_checked: "2026-11-05"
   - id: STY-031
-    text: {en: "The field message goes below the field. The error shows both visually and in text, and names the exact problem and its fix.", fr: "Le message du champ se place sous le champ. L’erreur s’affiche à la fois visuellement et par du texte, et nomme le problème précis et sa correction."}
+    text: {en: "The field message goes below the field. The error shows both visually and in text, and names the exact problem and its fix. Where this rule binds, a product applies the position in its markup and records it as a difference under STY-056.", fr: "Le message du champ se place sous le champ. L’erreur s’affiche à la fois visuellement et par du texte, et nomme le problème précis et sa correction. Là où cette règle s’impose, un produit applique la position dans son balisage et la consigne comme une différence selon STY-056."}
     status: same
     source: {title: "Système de design gouvernemental, Message d'erreur", date: "2026-10-14", url: "https://design.quebec.ca/design/composants/formulaire/message-erreur", archive: "https://web.archive.org/web/20261103004302/https://design.quebec.ca/design/composants/formulaire/message-erreur"}
     last_checked: "2026-11-05"
   - id: STY-032
     text: {en: "An error summary is optional. When present, it lists every error of the form as links and adds to the field messages.", fr: "Le sommaire des erreurs est facultatif. S’il est présent, il énumère toutes les erreurs du formulaire sous forme de liens et s’ajoute aux messages des champs."}
-    status: looser
+    status: same
     source: {title: "Système de design gouvernemental, Gestion des erreurs", date: "2024-06-05", url: "https://design.quebec.ca/design/bases/gestion-erreurs", archive: "https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/bases/gestion-erreurs"}
     last_checked: "2026-11-05"
   - id: STY-041
-    text: {en: "A warning button marks a destructive or irreversible action, such as a deletion. A confirmation step, often a modal dialog, is added when possible.", fr: "Un bouton d’avertissement signale une action destructrice ou irréversible, comme une suppression. Une étape de confirmation, souvent une boîte de dialogue modale, est ajoutée quand c’est possible."}
+    text: {en: "A warning button is only for destructive actions that the person cannot undo, such as deleting an account for good. Ideally, it triggers a second confirmation.", fr: "Le bouton d’avertissement sert seulement aux actions destructrices que la personne ne peut pas annuler, comme supprimer un compte pour de bon. Idéalement, il déclenche une deuxième validation."}
     status: looser
-    source: {title: "Système de design gouvernemental, Boutons", date: "2026-10-13", url: "https://design.quebec.ca/design/composants/boutons", archive: "https://web.archive.org/web/20250804161831/https://design.quebec.ca/design/composants/boutons"}
+    source: {title: "Système de design gouvernemental, Boutons", date: "2021-11-24", url: "https://design.quebec.ca/design/composants/boutons", archive: "https://web.archive.org/web/20250804161831/https://design.quebec.ca/design/composants/boutons"}
     last_checked: "2026-11-05"
   - id: STY-052
     text: {en: "The PIV header banner is mandatory on public sites and extranets. The government signature always appears and no other logo may replace it. The body supplies its site name.", fr: "Le bandeau d’en-tête PIV est obligatoire sur les sites publics et les extranets. La signature gouvernementale y figure toujours et aucun autre logo ne peut la remplacer. L’organisme fournit le nom de son site."}

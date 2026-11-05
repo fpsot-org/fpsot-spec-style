@@ -15,7 +15,7 @@ Every accessibility value (contrast, focus size, motion) comes from the FPSOT ac
 - Token files must follow the Design Tokens Format Module 2025.10, with a `$type` on every token, and color values must name their color space. Files should end in `.tokens.json`; tools may generate CSS custom properties (STY-002).
 - Two tiers must exist: base tokens hold values, semantic tokens name a purpose and alias a base token. Components must use semantic tokens only. Component tokens may exist and must alias semantic ones (STY-003).
 - Base names must give scale and step (`color.blue.50`); semantic names must give role and state (`color.text.danger`) and must not name a value (STY-004).
-- Token words must follow the FPSOT naming specification; segments must be kebab-case; CSS names must be `--fpsot--segment--segment` (STY-005).
+- Token words must come from the FPSOT naming specification's vocabulary, but token paths follow the Design Tokens format, not its JSON-field rules: segments must be kebab-case, scale steps may be numeric (`spacing.300`); CSS names must be `--fpsot--segment--segment` (STY-005).
 - Themes must give a value to every semantic token and must not rename, remove or add one; components must not read tokens outside the contract (STY-006).
 - The contract must use semantic versioning; a token must carry `$deprecated` for at least one minor version before removal (STY-007).
 
@@ -27,7 +27,7 @@ Every accessibility value (contrast, focus size, motion) comes from the FPSOT ac
 - Radius tokens must cover small, medium, large and pill; components must not set their own radius (STY-013).
 - Elevation must be a short list of shadow levels tied to roles; layers above the page should also have a border or backdrop (STY-014).
 - Every animation must use `duration` and `cubicBezier` tokens, and one setting must zero every duration (STY-015).
-- Layout tokens must cover breakpoints and content width in `rem` or `em`, and line length in `ch` (STY-016).
+- Layout tokens must cover breakpoints and content width as `rem` dimensions, and line length as a `number` token of characters with the unit `ch` in `$extensions."org.fpsot.style".unit` (STY-016).
 
 ## Component states
 
@@ -40,8 +40,8 @@ Every accessibility value (contrast, focus size, motion) comes from the FPSOT ac
 ## Errors, loading and empty states
 
 - Validate on leaving a field or on submit, never while typing; the server must check again (STY-030).
-- Field errors must sit next to the field with danger tokens and an icon, and name one problem and its fix. The theme sets above or below (STY-031).
-- A submitted form with errors must show a summary above it, in field order, with links, and focus must move to it (STY-032).
+- Field errors must sit next to the field with danger tokens and an icon, and name one problem and its fix. The product or engine sets above or below in the markup, never the theme; a binding government position is recorded under STY-056 (STY-031).
+- When a product shows an error summary, it must sit above the form and list the errors in field order. When a summary is needed, its links and focus come from the accessibility spec (STY-032).
 - Forms should work without browser scripts; HTMX or Alpine.js may enhance them (STY-033).
 - No indicator should show under one second; one must show for longer waits; it should be a shaped placeholder when the shape is known, else a spinner; a progress bar must show for known steps or waits over five seconds (STY-034).
 - A busy control must show its state and ignore a second activation (STY-035).
@@ -72,4 +72,4 @@ Every accessibility value (contrast, focus size, motion) comes from the FPSOT ac
 - The component check must render every state in every color scheme and run the accessibility spec's web tests (STY-062).
 - Each theme must publish a check record with versions, date, tools and each failure (STY-063).
 - Gaps must be fixed by token values, never behavior; the default theme may override a failing PatternFly value until upstream fixes it, and must report it (STY-064).
-- The Québec and Canada themes must also pass their jurisdiction checks from the accessibility spec (STY-065).
+- Each jurisdiction theme must meet the FPSOT accessibility baseline, which already includes Québec's added criteria (STY-065).
