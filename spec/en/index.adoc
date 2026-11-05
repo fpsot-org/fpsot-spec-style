@@ -1,34 +1,78 @@
 = FPSOT style specification
 include::_fpsot-terms.adoc[]
 
-Replace this page with the normative text of the specification.
-Start with the scope, then the conformance classes, then the requirements.
+This specification sets the visual look of the screens of {abbr-fpsot-first} products.
+It covers design tokens, the behavior of components and the themes that give a product its look.
+A design token is a named value, such as a color or a space.
+A component uses the token instead of a raw value.
+A theme gives a value to each token.
+One product can then look like link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly], or like the sites of the governments of Québec and Canada.
+
+The rules come in seven parts.
+
+* xref:tokens.adoc[Design tokens] set the token format, the token tiers and token names.
+* xref:categories.adoc[Token categories] cover color, type, spacing, radius, elevation, motion and layout.
+* xref:states.adoc[Component states] cover focus, hover, the pressed state and the disabled state.
+* xref:feedback.adoc[Errors, loading and empty states] cover how a screen reports errors, waits and empty views.
+* xref:destructive.adoc[Destructive actions] cover undo, and how a person confirms an action that cannot be undone.
+* xref:themes.adoc[Themes] set what a theme may contain, and the default, Québec and Canada themes.
+* xref:theme-check.adoc[Checking a theme] sets how to check each theme against the accessibility rules.
+
+The {abbr-fpsot} accessibility specification owns every accessibility rule, such as contrast, focus visibility and motion.
+This specification points to it and never restates or changes one of its values.
+The {abbr-fpsot} writing specification sets the wording of labels and messages.
+The {abbr-fpsot} naming specification sets the rules for names that machines read, token names included.
+
+The engine of {abbr-fpsot} screens is link:https://sitenetsoft.org/quarkus-pha/[quarkus-pha], which combines PatternFly, HTMX, Alpine.js and Qute templates.
+This specification uses it as its reference implementation.
+This mention is informative: a product conforms with any engine that meets the rules.
 
 == Conformance
 
-[quote, RFC 8174]
+[quote, 'link:https://www.rfc-editor.org/info/rfc8174[RFC 8174]']
 ____
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 (RFC 2119, RFC 8174) when, and only when, they appear in all capitals, as shown here.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in BCP 14 (link:https://www.rfc-editor.org/info/rfc2119[RFC 2119], link:https://www.rfc-editor.org/info/rfc8174[RFC 8174]) when, and only when, they appear in all capitals, as shown here.
 ____
 
-The French version uses the keywords of requirement WRT-011 of the {abbr-fpsot-first} writing specification.
+The keywords follow requirement WRT-010 of the {abbr-fpsot} writing specification.
+The French version uses the French keywords of WRT-011.
 
-== Requirements
+This specification has two conformance classes.
+A product conforms when its screens meet every MUST rule on tokens, components and destructive actions.
+A theme conforms when it meets every MUST rule on themes and on checking a theme.
+A product that uses a theme still needs its own accessibility check.
 
-Give each requirement an anchor line with its ID, directly above its paragraph.
-The anchor looks like `+[[XYZ-001]]+`.
-The example below shows the form. Replace it with the first requirement.
+== References
 
-[[TPL-001]]
-*TPL-001.* A normative statement MUST use one of the {abbr-bcp-first} 14 keywords in capitals.
-The keyword gives the rule its strength.
+This specification summarizes these outside sources in its own words.
+Each entry gives the version and date that the publisher states, and an archived copy.
+
+=== Normative
+
+* link:https://www.rfc-editor.org/info/rfc2119[RFC 2119, Key words for use in RFCs to Indicate Requirement Levels], IETF, BCP 14, 1997-03. link:https://web.archive.org/web/20261103005705/https://www.rfc-editor.org/info/rfc2119/[Archived copy]
+* link:https://www.rfc-editor.org/info/rfc8174[RFC 8174, Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words], IETF, BCP 14, 2017-05. link:https://web.archive.org/web/20261103005743/https://www.rfc-editor.org/info/rfc8174/[Archived copy]
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Archived copy]
+* link:https://www.designtokens.org/tr/2025.10/color/[Design Tokens Color Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261022221843/https://www.designtokens.org/tr/2025.10/color/[Archived copy]
+* link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0 release], Red Hat, 6.7.0, 2026-10-15. link:https://github.com/patternfly/patternfly/tree/8b47b37029ce6636663771d8086f95f0828aec42/[Source, version 8b47b37]
+* link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly, Design tokens overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20260605232727/https://www.patternfly.org/foundations-and-styles/design-tokens/overview/[Archived copy]
+* link:https://design.quebec.ca/a-propos/systeme-design[À propos du Système de design gouvernemental], Gouvernement du Québec, 2026-10-13. link:https://web.archive.org/web/20261103004635/https://design.quebec.ca/a-propos/systeme-design[Archived copy]
+* link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Bandeau d'en-tête PIV], Système de design gouvernemental, Gouvernement du Québec, 2026-10-14. link:https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Archived copy]
+* link:https://design-system.canada.ca/en/[GC Design System], Canadian Digital Service, components 1.7.0. link:https://web.archive.org/web/20260515112154/https://design-system.canada.ca/en/[Archived copy]
+* link:https://design.canada.ca/specifications.html[Canada.ca specifications], Government of Canada, 2024-08-21. link:https://web.archive.org/web/20261103002113/https://design.canada.ca/specifications.html[Archived copy]
+
+=== Informative
+
+* link:https://sitenetsoft.org/quarkus-pha/[quarkus-pha], SiteNetSoft. link:https://github.com/SiteNetSoft/quarkus-pha/tree/0547af25e10bfe30d32ad9cd14afaac08b6c7f35/[Source, version 0547af2]
+* link:https://www.designtokens.org/tr/2025.10/resolver/[Design Tokens Resolver Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261012112617/https://www.designtokens.org/tr/2025.10/resolver/[Archived copy]
+* link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[ARIA Authoring Practices Guide, Dialog (Modal) Pattern], W3C Web Accessibility Initiative. link:https://web.archive.org/web/20261026080539/https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Archived copy]
+* link:https://www.patternfly.org/accessibility/overview[PatternFly, Accessibility overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20261008072120/https://www.patternfly.org/accessibility/overview/[Archived copy]
+* link:https://www.w3.org/TR/WCAG22/[Web Content Accessibility Guidelines (WCAG) 2.2], W3C, W3C Recommendation, 2024-12-12. link:https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/[Archived copy]
+* link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Standard sur l'accessibilité des sites Web (SGQRI 008 3.0)], Ministère de la Cybersécurité et du Numérique, 3.0, in force since 2024-04-29, 2026-06-08. link:https://web.archive.org/web/20261103004830/https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Archived copy]
 
 == Document history
-
-Add one row for each version that changes this page.
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Change
-|0.1.0 |2026-11-03 |First version.
+|0.1.0 |2026-11-05 |First version.
 |===

@@ -1,0 +1,56 @@
+= Destructive actions
+include::_fpsot-terms.adoc[]
+
+These rules cover actions that delete data or end something, such as deleting a record or closing an account.
+They keep a person from losing work by mistake.
+
+== Undo first
+
+[[STY-040]]
+*STY-040.* When a product can reverse an action, it SHOULD act at once and offer an undo.
+It SHOULD NOT ask the person to confirm first.
+The undo MUST stay available for at least as long as the message that offers it.
+A question before every action trains people to confirm without reading.
+An undo costs nothing when the action was right.
+
+== Confirmation
+
+[[STY-041]]
+*STY-041.* An action that cannot be undone MUST ask the person to confirm it first, in a dialog.
+The dialog MUST name the object and the result, such as "Delete asset 4521? You will lose its history."
+The confirming button MUST repeat the verb of the action, such as "Delete asset".
+It MUST NOT read "OK" or "Yes".
+A specific label tells the person what will happen without reading the rest of the dialog.
+
+[[STY-042]]
+*STY-042.* The confirming button of a destructive action MUST use the danger tokens.
+When the dialog opens, focus MUST go to the least destructive action, such as "Cancel".
+The Escape key and the cancel button MUST close the dialog without acting.
+This follows the dialog pattern of the link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Authoring Practices Guide] of the {abbr-w3c-first}.
+A person who presses Enter by habit then cancels instead of deleting.
+
+[[STY-043]]
+*STY-043.* For a severe action, a dialog MAY ask the person to type the name of the object.
+Severe results include the loss of a whole account or of many records.
+The confirming button then MUST stay disabled until the typed name matches.
+The dialog MUST say what to type, as STY-024 asks for any disabled control.
+A typed name makes the person stop and read.
+It also slows every use, so a product keeps it for rare and severe actions.
+
+[[STY-044]]
+*STY-044.* A destructive action MUST start from a button that submits a form, never from a plain link.
+A browser, a search robot or a preview tool can follow a link without any person asking.
+
+== References
+
+=== Informative
+
+* link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[ARIA Authoring Practices Guide, Dialog (Modal) Pattern], W3C Web Accessibility Initiative. link:https://web.archive.org/web/20261026080539/https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Archived copy]
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

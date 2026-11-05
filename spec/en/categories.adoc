@@ -1,0 +1,100 @@
+= Token categories
+include::_fpsot-terms.adoc[]
+
+These rules set the categories of semantic tokens in the {abbr-fpsot-first} token contract.
+Each category uses a type of the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
+A theme gives the values.
+The {abbr-fpsot} accessibility specification sets the limits that those values must meet.
+
+== Color
+
+[[STY-010]]
+*STY-010.* The contract MUST hold semantic color tokens for these roles:
+
+* text, links, backgrounds and borders;
+* focus and the disabled state;
+* the four status roles: danger, warning, success and information.
+
+Link tokens MUST cover the default, hover and visited states.
+A token for text, icons, borders or focus MUST list the background tokens it can sit on.
+The list goes in `$extensions`, under the key `org.fpsot.style`, as the example shows.
+The check of STY-061 then knows every pair of colors to test.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "text": {
+      "danger": {
+        "$value": "{color.red.60}",
+        "$extensions": { "org.fpsot.style": { "on": ["color.background.page", "color.background.surface"] } }
+      }
+    }
+  }
+}
+----
+
+== Type
+
+[[STY-011]]
+*STY-011.* The contract MUST hold font family tokens for body text, headings and code.
+Each font family token MUST end its list with a generic family, such as `sans-serif` or `monospace`.
+Font size tokens MUST use `rem` units, and line height tokens MUST be numbers without a unit.
+Sizes in `rem` follow the text size that the person sets in the browser.
+A theme MUST NOT bundle a font file unless its license allows the product to redistribute it.
+
+== Spacing
+
+[[STY-012]]
+*STY-012.* Spacing tokens MUST form one fixed scale of dimension tokens in `rem`.
+Components MUST use only steps of the scale for margins, padding and gaps.
+A theme sets the size of the steps, such as 4 or 8 pixels at the default text size.
+One scale keeps every screen aligned, and a theme can change the whole rhythm at once.
+
+== Radius
+
+[[STY-013]]
+*STY-013.* The contract MUST hold border radius tokens for small, medium and large corners, and for a pill shape.
+A theme MAY set a radius to zero for square corners.
+Components MUST NOT set a radius of their own.
+
+== Elevation
+
+[[STY-014]]
+*STY-014.* Elevation tokens MUST be a short list of `shadow` levels, each tied to a role.
+The roles are flat content, raised items like cards, floating items like menus, and overlays like dialogs.
+A layer above the page SHOULD also have a border or a backdrop, not a shadow alone.
+Shadows can vanish in forced color modes, and faint shadows are hard to see for some people.
+The {abbr-fpsot} accessibility specification sets the contrast that such a border needs.
+
+== Motion
+
+[[STY-015]]
+*STY-015.* Each animation and transition MUST take its length from a `duration` token.
+It MUST take its easing from a `cubicBezier` token.
+The token set MUST let a product set every duration to zero in one place.
+The {abbr-fpsot} accessibility specification sets when a product stops or reduces motion.
+One place for all motion makes that rule simple to meet and to test.
+
+== Layout
+
+[[STY-016]]
+*STY-016.* The contract MUST hold layout tokens for the breakpoints and the width of the content area.
+It MUST also hold a token for the longest line of text.
+Breakpoints and widths MUST use `rem` or `em` units, and the line length MUST use `ch` units.
+A layout then follows the text size of the person, not only the width of the screen.
+
+== References
+
+=== Normative
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Archived copy]
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

@@ -1,0 +1,58 @@
+code: CA
+name: {en: Canada, fr: Canada}
+rows:
+  - id: STY-002
+    text: {en: "The GC Design System token files use the keys value and type, without the $ prefix of the 2025.10 format. Style Dictionary builds them.", fr: "Les fichiers de jetons du Système de design GC emploient les clés value et type, sans le préfixe $ du format 2025.10. Style Dictionary les produit."}
+    status: looser
+    source: {title: "GC Design System Tokens, tokens/base/color/tokens.json", version: "gcds-tokens 2.14.0", date: "2026-01-13", url: "https://github.com/cds-snc/gcds-tokens", archive: "https://github.com/cds-snc/gcds-tokens/blob/228bfa1d9d5df76174877c2c26c5358f0a2715a0/tokens/base/color/tokens.json"}
+    last_checked: "2026-11-05"
+  - id: STY-003
+    text: {en: "Tokens come in three tiers: base tokens hold the values, global tokens give a role or state, and component tokens apply to one component.", fr: "Les jetons forment trois niveaux : les jetons de base contiennent les valeurs, les jetons globaux donnent un rôle ou un état, et les jetons de composant visent un seul composant."}
+    status: same
+    source: {title: "GC Design System, Token naming", date: "2026-10-28", url: "https://design-system.canada.ca/en/foundations/design-tokens/token-naming/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/pages/en/foundations/design-tokens/token-naming.mdx"}
+    last_checked: "2026-11-05"
+  - id: STY-005
+    text: {en: "Names start with --gcds, then add segments for the category, role, state, scale or property. Segments that do not apply are left out.", fr: "Les noms commencent par --gcds, puis ajoutent des segments pour la catégorie, le rôle, l’état, l’échelle ou la propriété. Les segments inutiles sont omis."}
+    status: same
+    source: {title: "GC Design System, Token naming", date: "2026-10-28", url: "https://design-system.canada.ca/en/foundations/design-tokens/token-naming/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/pages/en/foundations/design-tokens/token-naming.mdx"}
+    last_checked: "2026-11-05"
+  - id: STY-010
+    text: {en: "Canada.ca colors are mandatory on every page: dark gray text, fixed colors for links, visited links and hover or focus, and a fixed error color. Text contrast must meet WCAG 1.4.6, level AAA.", fr: "Les couleurs de Canada.ca sont obligatoires sur chaque page : texte gris foncé, couleurs fixes pour les liens, les liens visités et le survol ou le focus, et une couleur d’erreur fixe. Le contraste du texte doit respecter le critère 1.4.6 des WCAG, niveau AAA."}
+    status: stricter
+    source: {title: "Canada.ca, Colours", date: "2018-10-01", url: "https://design.canada.ca/styles/colours.html", archive: "https://web.archive.org/web/20260824002418/https://design.canada.ca/styles/colours.html"}
+    last_checked: "2026-11-05"
+  - id: STY-011
+    text: {en: "Canada.ca typography is mandatory: Lato for headings and Noto Sans for body text, at 20 pixels on large screens and 18 pixels on small ones. Lines of text stop at 65 characters.", fr: "La typographie de Canada.ca est obligatoire : Lato pour les titres et Noto Sans pour le corps du texte, à 20 pixels sur les grands écrans et 18 pixels sur les petits. Les lignes de texte s’arrêtent à 65 caractères."}
+    status: stricter
+    source: {title: "Canada.ca, Typography", date: "2026-09-29", url: "https://design.canada.ca/styles/typography.html", archive: "https://web.archive.org/web/20260606045802/https://design.canada.ca/styles/typography.html"}
+    last_checked: "2026-11-05"
+  - id: STY-012
+    text: {en: "Spacing tokens use rem units and derive from a base size of 1.25rem. Small steps grow by 0.125rem and larger steps by 0.25rem.", fr: "Les jetons d’espacement emploient l’unité rem et découlent d’une taille de base de 1,25 rem. Les petits pas augmentent de 0,125 rem et les plus grands, de 0,25 rem."}
+    status: same
+    source: {title: "GC Design System, Spacing", date: "2026-11-02", url: "https://design-system.canada.ca/en/foundations/spacing/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/pages/en/foundations/spacing.mdx"}
+    last_checked: "2026-11-05"
+  - id: STY-021
+    text: {en: "Focus tokens for the background and the border are kept exclusively for focus on interactive elements.", fr: "Les jetons de focus de l’arrière-plan et de la bordure sont réservés au focus sur les éléments interactifs."}
+    status: same
+    source: {title: "GC Design System, Colour", date: "2026-11-02", url: "https://design-system.canada.ca/en/foundations/colour/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/pages/en/foundations/colour.mdx"}
+    last_checked: "2026-11-05"
+  - id: STY-031
+    text: {en: "The error message sits between the hint text and the response area, so above the field, with a warning icon. Each message gives one reason, a specific fix and no blame.", fr: "Le message d’erreur se place entre le texte d’aide et la zone de réponse, donc au-dessus du champ, avec une icône d’avertissement. Chaque message donne une seule raison, une correction précise et aucun blâme."}
+    status: same
+    source: {title: "GC Design System, Error message, Design", version: "Component 1.7.0", date: "2026-02-24", url: "https://design-system.canada.ca/en/components/error-message/design/", archive: "https://web.archive.org/web/20261103003034/https://design-system.canada.ca/en/components/error-message/design/"}
+    last_checked: "2026-11-05"
+  - id: STY-032
+    text: {en: "On submit, an error summary lists the errors in the order of the form. Each item links to its field and repeats the text of its error message.", fr: "À l’envoi, un sommaire des erreurs les énumère dans l’ordre du formulaire. Chaque élément renvoie à son champ et reprend le texte de son message d’erreur."}
+    status: same
+    source: {title: "GC Design System, Error summary, Design", version: "Component 1.7.0", date: "2026-09-15", url: "https://design-system.canada.ca/en/components/error-summary/design/", archive: "https://github.com/cds-snc/gcds-docs/blob/16129660ed25f230f6c62d27245f2de8061bacd7/docs/src/content/versioned/components/1.7.0/en/error-summary/design.mdx"}
+    last_checked: "2026-11-05"
+  - id: STY-052
+    text: {en: "Organizations outside the Government of Canada may use the Web Experience Toolkit. They must change the global header and footer so that they clearly differ from Canada.ca.", fr: "Les organisations hors du gouvernement du Canada peuvent employer la Boîte à outils de l’expérience Web. Elles doivent modifier l’en-tête et le pied de page globaux pour qu’ils se distinguent clairement de Canada.ca."}
+    status: same
+    source: {title: "Canada.ca, Who has to use the Canada.ca design", date: "2025-04-22", url: "https://design.canada.ca/specifications/usage-canadaca-design.html", archive: "https://web.archive.org/web/20260517030855/https://design.canada.ca/specifications/usage-canadaca-design.html"}
+    last_checked: "2026-11-05"
+  - id: STY-056
+    text: {en: "Institutions in Schedules I, I.1 and II of the Financial Administration Act must apply the Canada.ca design as written to all their public sites and services, mandatory templates included. The rule is binding, so a product records any behavior of those templates that differs from a STY rule, as STY-056 asks.", fr: "Les institutions des annexes I, I.1 et II de la Loi sur la gestion des finances publiques doivent appliquer telle quelle la conception de Canada.ca à tous leurs sites et services publics, y compris les gabarits obligatoires. La règle est obligatoire : un produit consigne donc tout comportement de ces gabarits qui diffère d’une règle STY, comme le demande STY-056."}
+    status: same
+    source: {title: "Canada.ca, Who has to use the Canada.ca design", date: "2025-04-22", url: "https://design.canada.ca/specifications/usage-canadaca-design.html", archive: "https://web.archive.org/web/20260517030855/https://design.canada.ca/specifications/usage-canadaca-design.html"}
+    last_checked: "2026-11-05"

@@ -1,0 +1,69 @@
+= Errors, loading and empty states
+include::_fpsot-terms.adoc[]
+
+These rules set how a screen tells the person about errors, waits and missing content.
+The wording of each message follows the {abbr-fpsot-first} writing specification.
+
+== Validation
+
+[[STY-030]]
+*STY-030.* A product MUST check a field when the person leaves it or submits the form.
+It MUST NOT show an error while the person is still typing in the field.
+The server MUST check every submitted value again, whatever the browser already checked.
+An error that appears during typing interrupts the person.
+A person can also bypass a check in the browser.
+
+[[STY-031]]
+*STY-031.* Each field error MUST show next to its field, with the danger tokens and an icon.
+Each message MUST name one problem and how to fix it.
+A theme sets whether the message sits above or below the field.
+The product keeps that one position on all its screens.
+The message and its timing stay the same in every theme.
+The {abbr-fpsot} accessibility specification sets how assistive technology finds the message of a field.
+
+[[STY-032]]
+*STY-032.* When a submitted form has errors, the page MUST show an error summary above the form.
+The summary MUST list each error in the order of the fields.
+Each item MUST link to its field, and the link MUST move focus to the field.
+Focus MUST move to the summary when it appears.
+Each item repeats the text of its field message.
+A person who submits a long form then learns at once how many problems there are, and where.
+
+[[STY-033]]
+*STY-033.* A form SHOULD work, and show its errors, without scripts in the browser.
+Scripts such as HTMX and Alpine.js MAY then improve the form.
+For example, a script can ask the server to check a field when the person leaves it.
+A page that needs a script fails when the script fails to load.
+
+== Loading
+
+[[STY-034]]
+*STY-034.* A product SHOULD NOT show a loading indicator for a wait under one second.
+It MUST show an indicator for a longer wait.
+It SHOULD show a placeholder in the shape of the content when it knows that shape, and a spinner otherwise.
+For a wait with known steps, or one that can pass five seconds, it MUST show a progress bar.
+The {abbr-fpsot} accessibility specification sets how assistive technology learns of the wait.
+
+[[STY-035]]
+*STY-035.* While a request runs, the control that started it MUST show a busy state.
+The control MUST ignore a second activation until the request ends.
+It MUST then return to its default state, after a success or an error.
+A second click on a slow button then never sends the same request twice.
+
+== Empty states
+
+[[STY-036]]
+*STY-036.* A list, table or view with no content MUST show an empty state, never a blank area.
+The empty state MUST have a heading that says why the view is empty.
+It SHOULD offer the next action, such as "Add an asset".
+A view with no results from a search or a filter MUST say so and offer to clear the filter.
+A view that failed to load MUST show an error, not an empty state.
+The person can then tell "nothing here yet" from "nothing matches" and from "something broke".
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

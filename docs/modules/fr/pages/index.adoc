@@ -1,16 +1,72 @@
-= Guide
-:translation-status: pending
-:page-type: explanation
+= Créer et vérifier un thème
+:page-type: how-to
 include::_fpsot-terms.adoc[]
 
-Cette page explique la spécification aux personnes qui l’adoptent.
-Chaque page de guide a un seul type.
-C’est un tutoriel, un guide pratique, une référence ou une explication.
+Ce guide montre comment construire le thème d’une collectivité publique et le vérifier avant sa publication.
+L’exemple associe quelques jetons sémantiques aux couleurs d’un système de design gouvernemental.
+
+== Partir du contrat des jetons
+
+Copiez les jetons sémantiques de la {abbr-fpsot-first}, comme le demande STY-006.
+Donnez une valeur à chacun, sans renommer, retirer ni ajouter de jeton.
+Écrivez le fichier selon le link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], comme le demande STY-002.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "text": {
+      "regular": {
+        "$value": { "colorSpace": "srgb", "components": [0.133, 0.212, 0.329], "hex": "#223654" },
+        "$extensions": { "org.fpsot.style": { "on": ["color.background.page"] } }
+      }
+    },
+    "background": {
+      "page": { "$value": { "colorSpace": "srgb", "components": [1, 1, 1], "hex": "#ffffff" } }
+    }
+  }
+}
+----
+
+Nommez les arrière-plans de chaque jeton de texte, d’icône, de bordure et de focus sous `$extensions`, comme le demande STY-010.
+La vérification des jetons a besoin de ces paires.
+
+== Limiter le thème à son aspect
+
+Le thème contient seulement couleur, typographie et mise en page, comme le fixe STY-050.
+Laissez de côté les scripts, les gabarits et tout changement au comportement d’un composant, comme le fixe STY-051.
+Laissez de côté les logos, les signatures et les mots-symboles, comme le fixe STY-052.
+L’organisme qui déploie le produit les ajoute dans l’en-tête et le pied de page.
+
+== Vérifier le thème
+
+. Faites la vérification des jetons de STY-061 sur chaque paire, dans chaque jeu de couleurs.
+Comparez chaque résultat aux règles de contraste de la spécification de la {abbr-fpsot} sur l’accessibilité.
+
+. Affichez chaque composant dans chaque état de STY-020, et faites les tests de STY-062.
+
+. Corrigez chaque défaut en changeant une valeur de jeton, comme le demande STY-064.
+Envoyez au moteur un défaut qu’une valeur ne peut pas corriger, et en amont s’il vient du système de design.
+
+. Publiez le registre de vérification de STY-063 avec la version.
+
+== Consigner les écarts
+
+Un système de design gouvernemental peut fixer un comportement qui diffère d’une règle de la spécification sur le style.
+Ne mettez pas ce comportement dans le thème.
+Le produit consigne l’écart, comme le demande STY-056.
+
+== Références
+
+=== Références informatives
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Copie archivée]
 
 == Historique du document
 
 [cols="1,1,4",options="header"]
 |===
 |Version |Date |Changement
-|0.1.0 |2026-11-03 |Première version.
+|0.1.0 |2026-11-05 |Première version.
 |===

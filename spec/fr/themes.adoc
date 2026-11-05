@@ -1,0 +1,88 @@
+= Thèmes
+include::_fpsot-terms.adoc[]
+
+Un thème donne son aspect à un produit.
+Ces règles fixent ce qu’un thème peut contenir, et décrivent les trois thèmes de la {abbr-fpsot-first}.
+
+== Contenu d’un thème
+
+[[STY-050]]
+*STY-050.* Un thème DOIT contenir seulement de la couleur, de la typographie et de la mise en page.
+La couleur et la typographie sont les valeurs de leurs jetons, avec les fichiers de police du thème.
+La mise en page comprend les jetons d’espacement, d’arrondi, d’élévation et de mise en page, et la place des zones.
+Les jetons de mouvement ne font pas partie d’un thème.
+Un thème PEUT contenir plusieurs jeux de couleurs, comme clair, sombre et contraste élevé.
+Avec une limite claire, tout le monde peut vérifier qu’un thème change l’aspect et rien d’autre.
+
+[[STY-051]]
+*STY-051.* Un thème NE DOIT PAS changer le comportement.
+Il NE DOIT PAS contenir de scripts ni de gabarits.
+Il NE DOIT PAS changer les états, l’usage du clavier ou l’ordre du focus d’un composant.
+Il NE DOIT PAS changer la validation, les messages ou les étapes de confirmation.
+Il NE DOIT PAS masquer, ajouter ou réordonner le contenu d’un composant.
+Les gens obtiennent alors partout le même comportement sûr, et les tests du comportement valent pour chaque thème.
+
+[[STY-052]]
+*STY-052.* Un thème NE DOIT PAS contenir de marques officielles, comme des logos, des signatures ou des armoiries.
+Les mots-symboles et les drapeaux sont aussi des marques officielles.
+Le moteur DOIT réserver une place aux marques dans l’en-tête et dans le pied de page.
+L’organisme public qui déploie le produit y ajoute ses propres marques.
+Chaque gouvernement encadre l’usage de ses marques, et seul l’organisme sait quelles marques il peut afficher.
+
+== Le thème par défaut de la FPSOT
+
+[[STY-053]]
+*STY-053.* Le thème par défaut de la {abbr-fpsot} DOIT être link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly] 6 tel que publié, avec ses valeurs de jetons.
+Il associe les jetons sémantiques de la {abbr-fpsot} aux jetons sémantiques de PatternFly.
+Il ne change aucune valeur, sauf les substitutions que permet STY-064.
+Il DOIT indiquer la version de PatternFly qu’il associe.
+La version 0.1 de cette spécification associe link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0], publié le 2026-10-15.
+Il convient aux écrans du personnel, et les services au public DEVRAIENT employer le thème de leur collectivité publique.
+
+== Le thème du Québec
+
+[[STY-054]]
+*STY-054.* Le thème du Québec DOIT suivre le link:https://design.quebec.ca/a-propos/systeme-design[Système de design gouvernemental] du Québec.
+Il en reprend les palettes de couleurs, les polices, la grille de 8 pixels et les niveaux d’ombre.
+Il DOIT aussi suivre la mise en page du link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[bandeau d’en-tête] du Programme d’identification visuelle du Québec.
+L’organisme ajoute la signature gouvernementale à ce bandeau, comme le fixe STY-052.
+L’application stricte du système de design est obligatoire pour les ministères et organismes du Québec.
+
+== Le thème du Canada
+
+[[STY-055]]
+*STY-055.* Le thème du Canada DOIT suivre le link:https://design-system.canada.ca/en/[Système de design GC] et les link:https://design.canada.ca/specifications.html[spécifications de Canada.ca].
+Il reprend les jetons de design du Système de design GC.
+Il reprend aussi les couleurs, la typographie et les mises en page obligatoires de Canada.ca.
+Il DOIT suivre la mise en page de l’en-tête et du pied de page globaux de Canada.ca.
+L’institution ajoute la signature et le mot-symbole fédéraux, comme le fixe STY-052.
+La conception de Canada.ca est obligatoire pour les sites publics des institutions fédérales qu’elle vise.
+
+== Règles de comportement des gouvernements
+
+[[STY-056]]
+*STY-056.* Un système de design gouvernemental peut aussi fixer un comportement, comme le moment de valider un champ.
+Un thème NE DOIT PAS porter ce comportement, même quand il suit ce système de design.
+Une règle gouvernementale obligatoire peut fixer un comportement qui diffère d’une règle de cette spécification.
+Le produit DOIT alors consigner chacun de ces écarts dans sa documentation.
+Les pages de comparaison de cette spécification montrent les écarts connus.
+Le produit indique alors quelles règles il respecte, et le thème reste un pur aspect.
+
+== Références
+
+=== Références normatives
+
+* link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0, notes de version], Red Hat, 6.7.0, 2026-10-15. link:https://github.com/patternfly/patternfly/tree/8b47b37029ce6636663771d8086f95f0828aec42/[Source, version 8b47b37]
+* link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly, Design tokens overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20260605232727/https://www.patternfly.org/foundations-and-styles/design-tokens/overview/[Copie archivée]
+* link:https://design.quebec.ca/a-propos/systeme-design[À propos du Système de design gouvernemental], Gouvernement du Québec, 2026-10-13. link:https://web.archive.org/web/20261103004635/https://design.quebec.ca/a-propos/systeme-design[Copie archivée]
+* link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Bandeau d'en-tête PIV], Système de design gouvernemental, Gouvernement du Québec, 2026-10-14. link:https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Copie archivée]
+* link:https://design-system.canada.ca/en/[GC Design System], Service numérique canadien, composants 1.7.0. link:https://web.archive.org/web/20260515112154/https://design-system.canada.ca/en/[Copie archivée]
+* link:https://design.canada.ca/specifications.html[Canada.ca specifications], Gouvernement du Canada, 2024-08-21. link:https://web.archive.org/web/20261103002113/https://design.canada.ca/specifications.html[Copie archivée]
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===

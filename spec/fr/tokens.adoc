@@ -1,0 +1,107 @@
+= Jetons de design
+include::_fpsot-terms.adoc[]
+
+Ces règles fixent la façon dont les produits conservent et nomment les valeurs de leur aspect.
+Un jeton de design est une valeur nommée, comme `color.text.danger`.
+Un composant emploie le jeton au lieu d’une valeur brute, comme un code hexadécimal.
+
+== Des jetons pour chaque valeur
+
+[[STY-001]]
+*STY-001.* Un composant DOIT prendre chaque valeur visuelle d’un jeton de design.
+Les valeurs visuelles comprennent les couleurs, les polices, les tailles et les espacements.
+Elles comprennent aussi les arrondis, les ombres et les durées.
+Un composant NE DOIT PAS écrire de valeur brute, comme `#0066cc` ou `14px`, dans son code.
+Un thème peut alors changer l’aspect de tous les écrans à un seul endroit.
+Une personne qui révise un thème peut aussi en vérifier chaque valeur dans un seul fichier.
+
+== Format des jetons
+
+[[STY-002]]
+*STY-002.* Les fichiers de jetons DOIVENT suivre le link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
+Chaque jeton DOIT avoir une propriété `$type`, placée sur le jeton lui-même ou sur son groupe.
+Les valeurs de couleur DOIVENT suivre le link:https://www.designtokens.org/tr/2025.10/color/[Color Module 2025.10] et nommer leur espace colorimétrique.
+Un fichier DEVRAIT porter l’extension `.tokens.json`.
+Des outils PEUVENT produire des propriétés personnalisées {abbr-css-first} ou d’autres fichiers de plateforme à partir des fichiers de jetons.
+C’est le seul format de jetons stable que lisent les outils de design et les outils de construction.
+
+Le Design Tokens Community Group du {abbr-w3c-first} a publié les deux modules le 2025-10-28.
+Ce sont des rapports finaux de groupe communautaire, et non des recommandations du {abbr-w3c}, mais le groupe les déclare stables.
+Seule une nouvelle version de cette spécification peut adopter une version ultérieure du format.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "blue": {
+      "50": { "$value": { "colorSpace": "srgb", "components": [0, 0.4, 0.8], "hex": "#0066cc" } }
+    },
+    "link": {
+      "default": { "$value": "{color.blue.50}" }
+    }
+  }
+}
+----
+
+== Jetons de base et jetons sémantiques
+
+[[STY-003]]
+*STY-003.* Un ensemble de jetons DOIT avoir deux niveaux.
+Un jeton de base contient une valeur brute, comme un pas de l’échelle des bleus.
+Un jeton sémantique nomme un usage, comme la couleur du texte d’un lien.
+Il renvoie à un jeton de base par un alias.
+Les composants DOIVENT employer seulement des jetons sémantiques.
+Un thème change alors des usages, et un jeu de couleurs sombre ne touche pas aux composants.
+
+Un ensemble PEUT ajouter un troisième niveau de jetons de composant.
+Chaque jeton de composant DOIT renvoyer à un jeton sémantique.
+
+[[STY-004]]
+*STY-004.* Le nom d’un jeton de base DOIT donner son échelle et son pas, comme `color.blue.50` ou `spacing.300`.
+Le nom d’un jeton sémantique DOIT donner un rôle, et un état s’il y a lieu.
+Par exemple, `color.text.danger` et `color.background.action.hover`.
+Un nom sémantique NE DOIT PAS nommer une valeur, comme `red` ou `14px`.
+Un nom lié à une valeur devient faux dès qu’un thème change la valeur.
+
+== Noms des jetons
+
+[[STY-005]]
+*STY-005.* Les mots du nom d’un jeton DOIVENT suivre la spécification de nommage de la {abbr-fpsot-first}.
+Les noms des jetons sont des noms que lisent les machines, comme les noms des champs.
+Tant que cette spécification ne fixe pas de casse pour les jetons, chaque segment DOIT être en kebab-case, comme `font-family`.
+Une propriété personnalisée {abbr-css} DOIT commencer par `--fpsot` et joindre les segments par deux traits d’union.
+Par exemple, un outil peut ramener `--fpsot--color--text--danger` au chemin de son jeton.
+Le link:https://www.designtokens.org/tr/2025.10/format/[format Design Tokens] interdit aussi certains caractères dans les noms, comme `{`, `}` et `.`.
+
+== Le contrat des jetons
+
+[[STY-006]]
+*STY-006.* Les jetons sémantiques de la {abbr-fpsot} forment le contrat entre les composants et les thèmes.
+Un thème DOIT donner une valeur à chaque jeton sémantique du contrat.
+Un thème NE DOIT PAS renommer ni retirer un jeton sémantique.
+Il NE DOIT PAS en ajouter un que lit un composant.
+Un composant NE DOIT PAS lire un jeton que le contrat ne nomme pas.
+Tout thème conforme fonctionne alors avec tout composant conforme.
+
+[[STY-007]]
+*STY-007.* Le contrat des jetons DOIT porter un numéro de version qui suit la gestion sémantique de version.
+Renommer ou retirer un jeton sémantique est un changement incompatible, qui demande une nouvelle version majeure.
+Avant un retrait, le jeton DOIT porter `$deprecated` avec le nom de son remplaçant.
+Il DOIT garder cette marque pendant au moins une version mineure.
+Les personnes qui créent des thèmes ont alors le temps de passer au nouveau jeton.
+
+== Références
+
+=== Références normatives
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Copie archivée]
+* link:https://www.designtokens.org/tr/2025.10/color/[Design Tokens Color Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261022221843/https://www.designtokens.org/tr/2025.10/color/[Copie archivée]
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===

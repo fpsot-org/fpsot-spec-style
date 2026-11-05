@@ -1,0 +1,105 @@
+= Design tokens
+include::_fpsot-terms.adoc[]
+
+These rules set how products store and name the values of their look.
+A design token is a named value, such as `color.text.danger`.
+A component uses the token instead of a raw value like a hex code.
+
+== Tokens for every value
+
+[[STY-001]]
+*STY-001.* A component MUST take each visual value from a design token.
+Visual values include colors and fonts, sizes and spaces, and also corner radii, shadows and durations.
+A component MUST NOT write a raw value, such as `#0066cc` or `14px`, in its markup, style sheet or script.
+A theme can then change the look of every screen in one place.
+A reviewer can also check every value of a theme in one file.
+
+== Token format
+
+[[STY-002]]
+*STY-002.* Token files MUST follow the link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10].
+Each token MUST have a `$type`, set on the token itself or on its group.
+Color values MUST follow the link:https://www.designtokens.org/tr/2025.10/color/[Color Module 2025.10] and name their color space.
+A file SHOULD use the extension `.tokens.json`.
+Tools MAY generate {abbr-css-first} custom properties or other platform files from the token files.
+This format is the only stable token format that design tools and build tools both read.
+
+The Design Tokens Community Group of the {abbr-w3c-first} published both modules on 2025-10-28.
+They are Final Community Group Reports, not {abbr-w3c} Recommendations, but the group declares them stable.
+Only a new version of this specification can move to a later version of the format.
+
+[source,json]
+----
+{
+  "color": {
+    "$type": "color",
+    "blue": {
+      "50": { "$value": { "colorSpace": "srgb", "components": [0, 0.4, 0.8], "hex": "#0066cc" } }
+    },
+    "link": {
+      "default": { "$value": "{color.blue.50}" }
+    }
+  }
+}
+----
+
+== Base tokens and semantic tokens
+
+[[STY-003]]
+*STY-003.* A token set MUST have two tiers.
+A base token holds a raw value, such as a step of the blue scale.
+A semantic token names a purpose, such as the text color of a link.
+It refers to a base token by an alias.
+Components MUST use semantic tokens only.
+A theme then changes purposes, not single components, and a dark color scheme needs no change in the components.
+
+A set MAY add a third tier of component tokens.
+Each component token MUST refer to a semantic token.
+
+[[STY-004]]
+*STY-004.* The name of a base token MUST give its scale and step, such as `color.blue.50` or `spacing.300`.
+The name of a semantic token MUST give a role, and a state where one applies.
+Examples are `color.text.danger` and `color.background.action.hover`.
+A semantic name MUST NOT name a value, such as `red` or `14px`.
+A name tied to a value turns false as soon as a theme changes the value.
+
+== Token names
+
+[[STY-005]]
+*STY-005.* The words of a token name MUST follow the {abbr-fpsot-first} naming specification.
+Token names are names that machines read, like the names of fields.
+Until that specification sets a case style for tokens, each segment MUST be in kebab-case, such as `font-family`.
+A {abbr-css} custom property MUST start with `--fpsot` and join the segments with two hyphens.
+An example is `--fpsot--color--text--danger`, and a tool can turn it back into its token path.
+The link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens format] also forbids some characters in names, such as `{`, `}` and `.`.
+
+== The token contract
+
+[[STY-006]]
+*STY-006.* The {abbr-fpsot} semantic tokens form the contract between components and themes.
+A theme MUST give a value to every semantic token of the contract.
+A theme MUST NOT rename or remove a semantic token, and MUST NOT add one that a component reads.
+A component MUST NOT read a token that the contract does not list.
+Any conforming theme then works with any conforming component.
+
+[[STY-007]]
+*STY-007.* The token contract MUST carry a version number that follows semantic versioning.
+To rename or remove a semantic token is a breaking change, and it needs a new major version.
+Before a removal, the token MUST carry `$deprecated` with the name of its replacement.
+It MUST keep that mark for at least one minor version.
+Theme authors then have time to move to the new token.
+
+== References
+
+=== Normative
+
+* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Archived copy]
+* link:https://www.designtokens.org/tr/2025.10/color/[Design Tokens Color Module 2025.10], W3C Design Tokens Community Group, Final Community Group Report, 2025-10-28. link:https://web.archive.org/web/20261022221843/https://www.designtokens.org/tr/2025.10/color/[Archived copy]
+
+== Document history
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Change
+|0.1.0 |2026-11-05 |First version.
+|===

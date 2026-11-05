@@ -1,0 +1,59 @@
+= États des composants
+include::_fpsot-terms.adoc[]
+
+Ces règles fixent les états des composants interactifs, comme les boutons, les liens et les champs de formulaire.
+Les états relèvent du comportement, donc chaque thème les garde tels quels.
+Un thème donne seulement les couleurs et les formes de chaque état.
+
+== L’ensemble des états
+
+[[STY-020]]
+*STY-020.* Chaque composant interactif DOIT définir ces états : par défaut, survol, focus, enfoncé et désactivé.
+S’il y a lieu, il DOIT aussi définir un état sélectionné et un état d’erreur.
+Chaque état DOIT prendre son aspect de jetons d’état sémantiques, comme `color.background.action.hover`.
+Deux états NE DOIVENT PAS avoir le même aspect.
+Sur les écrans tactiles, un thème PEUT donner le même aspect au survol et à l’état enfoncé.
+La personne sait alors toujours ce que le composant fera et ce qu’il vient de faire.
+
+== Focus
+
+[[STY-021]]
+*STY-021.* Chaque composant interactif DOIT afficher un indicateur de focus quand il reçoit le focus du clavier.
+L’indicateur DOIT employer les jetons de focus, et les autres parties d’un écran NE DOIVENT PAS les employer.
+L’indicateur DOIT s’ajouter à l’aspect du survol sans le remplacer, pour que les deux puissent s’afficher ensemble.
+La taille et le contraste de l’indicateur viennent de la spécification de la {abbr-fpsot-first} sur l’accessibilité.
+Avec un seul aspect du focus sur tous les écrans, les personnes qui emploient un clavier se repèrent facilement.
+
+== Survol
+
+[[STY-022]]
+*STY-022.* Le survol NE DOIT PAS être le seul moyen de faire apparaître un contenu ou une action.
+Un état de survol NE DOIT PAS déplacer d’autres contenus ni changer la taille du composant.
+Les écrans tactiles n’ont pas de survol.
+Un décalage de la mise en page peut aussi faire cliquer au mauvais endroit.
+
+== États enfoncé et sélectionné
+
+[[STY-023]]
+*STY-023.* L’état enfoncé DOIT s’afficher pendant que la personne active le composant avec un pointeur, au toucher ou au clavier.
+L’état sélectionné DOIT rester jusqu’à ce que la personne change la sélection.
+Il DOIT se voir par plus qu’un changement de couleur, comme un crochet ou une barre.
+Un élément sélectionné et un élément qui a seulement le focus ne se ressemblent alors jamais.
+
+== État désactivé
+
+[[STY-024]]
+*STY-024.* Un produit NE DEVRAIT PAS désactiver un bouton pour montrer qu’un formulaire est incomplet.
+Il DEVRAIT garder le bouton actif, et expliquer ce qui manque quand la personne l’emploie.
+Les messages de STY-031 et de STY-032 donnent cette explication.
+Si un produit désactive une commande, il DOIT en donner la raison près d’elle ou dans son texte d’aide.
+Une commande désactivée DOIT employer les jetons de l’état désactivé et DOIT se distinguer de l’état par défaut.
+Un bouton désactivé ne dit pas à la personne quoi faire ensuite, et le focus du clavier le saute.
+
+== Historique du document
+
+[cols="1,1,4",options="header"]
+|===
+|Version |Date |Changement
+|0.1.0 |2026-11-05 |Première version.
+|===
