@@ -11,7 +11,7 @@ Un même produit peut alors ressembler à link:https://www.patternfly.org/founda
 Les règles forment sept parties.
 
 * Les xref:tokens.adoc[jetons de design] fixent le format, les niveaux et les noms des jetons.
-* Les xref:categories.adoc[catégories de jetons] couvrent la couleur, la typographie, l’espacement, l’élévation, le mouvement et la mise en page.
+* Les xref:categories.adoc[catégories de jetons] couvrent la couleur, la typographie, l’espacement, les arrondis, l’élévation, le mouvement et la mise en page.
 * Les xref:states.adoc[états des composants] portent sur le focus, le survol, l’état enfoncé et l’état désactivé.
 * La partie xref:feedback.adoc[erreurs, chargement et états vides] dit comment un écran signale les erreurs, les attentes et les vues vides.
 * Les xref:destructive.adoc[actions destructrices] portent sur l’annulation, et sur la confirmation d’une action irréversible.
@@ -51,23 +51,11 @@ Chaque entrée donne la version et la date qu’indique l’éditeur, ainsi qu�
 
 * link:https://www.rfc-editor.org/info/rfc2119[RFC 2119, Key words for use in RFCs to Indicate Requirement Levels], IETF, BCP 14, 1997-03. link:https://web.archive.org/web/20261103005705/https://www.rfc-editor.org/info/rfc2119/[Copie archivée]
 * link:https://www.rfc-editor.org/info/rfc8174[RFC 8174, Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words], IETF, BCP 14, 2017-05. link:https://web.archive.org/web/20261103005743/https://www.rfc-editor.org/info/rfc8174/[Copie archivée]
-* link:https://www.designtokens.org/tr/2025.10/format/[Design Tokens Format Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261018055929/https://www.designtokens.org/tr/2025.10/format/[Copie archivée]
-* link:https://www.designtokens.org/tr/2025.10/color/[Design Tokens Color Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261022221843/https://www.designtokens.org/tr/2025.10/color/[Copie archivée]
-* link:https://github.com/patternfly/patternfly/releases/tag/v6.7.0[PatternFly 6.7.0, notes de version], Red Hat, 6.7.0, 2026-10-15. link:https://github.com/patternfly/patternfly/tree/8b47b37029ce6636663771d8086f95f0828aec42/[Source, version 8b47b37]
 * link:https://www.patternfly.org/foundations-and-styles/design-tokens/overview[PatternFly, Design tokens overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20260605232727/https://www.patternfly.org/foundations-and-styles/design-tokens/overview/[Copie archivée]
-* link:https://design.quebec.ca/a-propos/systeme-design[À propos du Système de design gouvernemental], Gouvernement du Québec, 2026-10-13. link:https://web.archive.org/web/20261103004635/https://design.quebec.ca/a-propos/systeme-design[Copie archivée]
-* link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Bandeau d'en-tête PIV], Système de design gouvernemental, Gouvernement du Québec, 2026-10-14. link:https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Copie archivée]
-* link:https://design-system.canada.ca/en/[GC Design System], Service numérique canadien, 2026-03-11. link:https://web.archive.org/web/20260515112154/https://design-system.canada.ca/en/[Copie archivée]
-* link:https://design.canada.ca/specifications.html[Canada.ca specifications], Gouvernement du Canada, 2024-08-21. link:https://web.archive.org/web/20261103002113/https://design.canada.ca/specifications.html[Copie archivée]
 
 === Références informatives
 
 * link:https://sitenetsoft.org/quarkus-pha/[quarkus-pha], SiteNetSoft. link:https://github.com/SiteNetSoft/quarkus-pha/tree/0547af25e10bfe30d32ad9cd14afaac08b6c7f35/[Source, version 0547af2]
-* link:https://www.designtokens.org/tr/2025.10/resolver/[Design Tokens Resolver Module 2025.10], W3C Design Tokens Community Group, rapport final de groupe communautaire, 2025-10-28. link:https://web.archive.org/web/20261012112617/https://www.designtokens.org/tr/2025.10/resolver/[Copie archivée]
-* link:https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[ARIA Authoring Practices Guide, Dialog (Modal) Pattern], W3C, Web Accessibility Initiative. link:https://web.archive.org/web/20261026080539/https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/[Copie archivée]
-* link:https://www.patternfly.org/accessibility/overview[PatternFly, Accessibility overview], Red Hat, PatternFly 6. link:https://web.archive.org/web/20261008072120/https://www.patternfly.org/accessibility/overview/[Copie archivée]
-* link:https://www.w3.org/TR/WCAG22/[Web Content Accessibility Guidelines (WCAG) 2.2], W3C, recommandation du W3C, 2024-12-12. link:https://web.archive.org/web/20261103005900/https://www.w3.org/TR/WCAG22/[Copie archivée]
-* link:https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Standard sur l'accessibilité des sites Web (SGQRI 008 3.0)], ministère de la Cybersécurité et du Numérique, 3.0, en vigueur depuis le 2024-04-29, 2026-06-08. link:https://web.archive.org/web/20261103004830/https://www.quebec.ca/gouvernement/ministeres-organismes/cybersecurite-numerique/publications/standard-accessibilite-sites-web[Copie archivée]
 
 == Historique du document
 
@@ -75,4 +63,5 @@ Chaque entrée donne la version et la date qu’indique l’éditeur, ainsi qu�
 |===
 |Version |Date |Changement
 |0.1.0 |2026-11-05 |Première version.
+|0.1.1 |2026-11-07 |Les références ne donnent que les sources que cite cette page. Les autres pages donnent leurs propres sources. La liste des catégories de jetons nomme aussi les arrondis.
 |===

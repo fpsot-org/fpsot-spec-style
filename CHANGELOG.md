@@ -6,6 +6,17 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-07
+
+### Changed
+
+- Index: the References list only the sources that the index cites; each other page already lists its own.
+- Themes: the page cites the Design Tokens Resolver Module 2025.10 as one way to merge token sets for a theme.
+- French index: the list of token categories names « les arrondis » (radius).
+- Canada comparison, STY-002: the GC Design System tokens are now the `@gcds-core/tokens` package, version 1.6.0 of 2026-08-10. They still use `value` and `type` without the `$` prefix.
+- Canada comparison, STY-010: Canada.ca asks for WCAG 1.4.6 (AAA) contrast only on backgrounds other than white. The status stays stricter.
+- Canada comparison, STY-032: removes "on submit", which the GC Design System source does not say.
+
 ## [0.1.0] - 2026-11-05
 
 ### Added
