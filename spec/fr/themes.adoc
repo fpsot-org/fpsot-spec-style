@@ -52,7 +52,7 @@ L’application stricte du système de design est obligatoire pour les ministèr
 == Le thème du Canada
 
 [[STY-055]]
-*STY-055.* Le thème du Canada DOIT suivre le link:https://design-system.canada.ca/en/[Système de design GC] et les link:https://design.canada.ca/specifications.html[spécifications de Canada.ca].
+*STY-055.* Le thème du Canada DOIT suivre le link:https://design-system.canada.ca/en/[Système de design GC] et les link:https://conception.canada.ca/specifications.html[spécifications de Canada.ca].
 Il reprend les jetons de design du Système de design GC.
 Il reprend aussi les couleurs, la typographie et les mises en page obligatoires de Canada.ca.
 Il DOIT suivre la mise en page de l’en-tête et du pied de page globaux de Canada.ca.
@@ -78,7 +78,7 @@ Le produit indique alors quelles règles il respecte, et le thème reste un pur 
 * link:https://design.quebec.ca/a-propos/systeme-design[À propos du Système de design gouvernemental], Gouvernement du Québec, 2026-10-13. link:https://web.archive.org/web/20261103004635/https://design.quebec.ca/a-propos/systeme-design[Copie archivée]
 * link:https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Bandeau d'en-tête PIV], Système de design gouvernemental, Gouvernement du Québec, 2026-10-14. link:https://web.archive.org/web/20260626095533/https://design.quebec.ca/design/modeles/bandeau-en-tete-piv[Copie archivée]
 * link:https://design-system.canada.ca/en/[GC Design System], Service numérique canadien, 2026-03-11. link:https://web.archive.org/web/20260515112154/https://design-system.canada.ca/en/[Copie archivée]
-* link:https://design.canada.ca/specifications.html[Canada.ca specifications], Gouvernement du Canada, 2024-08-21. link:https://web.archive.org/web/20261103002113/https://design.canada.ca/specifications.html[Copie archivée]
+* link:https://conception.canada.ca/specifications.html[Spécifications de Canada.ca], Gouvernement du Canada, 2024-08-21. link:https://web.archive.org/web/20260731044021/https://conception.canada.ca/specifications.html[Copie archivée]
 
 === Références informatives
 
