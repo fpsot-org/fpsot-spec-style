@@ -6,6 +6,12 @@ and versions follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.h
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-11-11
+
+### Changed
+
+- French themes page: STY-055 and the References link the French version of the Canada.ca specifications, with its own archived copy. The rule does not change.
+
 ## [0.1.1] - 2026-11-07
 
 ### Changed

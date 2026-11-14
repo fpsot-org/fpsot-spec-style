@@ -89,4 +89,5 @@ The product then states which rules it meets, and the theme stays a pure look.
 |Version |Date |Change
 |0.1.0 |2026-11-05 |First version.
 |0.1.1 |2026-11-07 |Cites the Design Tokens Resolver Module as one way to merge token sets for a theme.
+|0.1.2 |2026-11-11 |The French page links the French version of the Canada.ca specifications.
 |===
